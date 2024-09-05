@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.jobs-container {
+  display: flex;
+  height: 100vh; /* Ensure the container takes the full viewport height */
+  width: 100vw; /* Ensure the container takes the full viewport width */
+  overflow: hidden; /* Prevents any scrollbars from the root container */
+}
+
+.jobs-list {
+  width: 500px; /* Adjust width as needed */
+  border-right: 1px solid #ccc;
+  overflow-y: auto; /* Adds a scroll bar only when necessary */
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+.job-details-container {
+  flex-grow: 1;
+  overflow-y: auto; /* Adds a scroll bar only when necessary */
+  padding: 20px;
+  background-color: #fff;
+}
+
+.job-item {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid black;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.job-item:hover {
+  background-color: #f5f5f5;
+}
+
+.job-item:hover {
+  background-color: #f5f5f5;
+}
+
+.job-details {
+  display: flex;
+  align-items: center;
+}
+
+.job-logo {
+  margin-right: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.job-info h5 {
+  margin-bottom: 5px;
+}
+
+.jobRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.jobLabel {
+  margin-right: 5px;
+}
+
+.job-details-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+
+
+
+  
+ 

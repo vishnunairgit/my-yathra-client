@@ -1,0 +1,208 @@
+/* 
+.login {
+  height: 100vh;
+  padding: 50px 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+
+.login .login-form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;  
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login .login-form h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.login img {
+  width: 350px;
+  padding-bottom: 30px;
+}
+
+
+.login .form-group {
+  margin-bottom: 1em;
+}
+
+.login .form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.login .form-group input {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 28px;
+}
+
+.login .error-message {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  border: 1px solid #ff0000;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login .success {
+  color: #008000;
+  background-color: #e6ffe6;
+  border: 1px solid #008000;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login .password-container {
+  position: relative;
+}
+
+.login .pwd-img {
+  position: absolute;
+  right: 10px;
+  top:85%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 6%;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login {
+  height: 100vh;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.login .login-form {
+  width: 400px;
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.login .login-form h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.login img {
+  width: 350px;
+  padding-bottom: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.login .form-group {
+  margin-bottom: 1em;
+}
+
+.login .form-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.login .form-group input {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 28px;
+}
+
+.login .error-message {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  border: 1px solid #ff0000;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login .success {
+  color: #008000;
+  background-color: #e6ffe6;
+  border: 1px solid #008000;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login .password-container {
+  position: relative;
+}
+
+.login .pwd-img {
+  position: absolute;
+  right: 10px;
+  /* top:100%; */
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 24px; /* Set a fixed width for better control */
+}
+
+/* .login .button_01,
+.login .button_02 {
+  width: 100%;
+  padding: 0.75em;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login .button_01 {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.login .button_01:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.login .button_02 {
+  background-color: #28a745;
+  color: #fff;
+} */
+
+.login .signup-link {
+  text-align: center;
+  margin-top: 1em;
+}

@@ -1,0 +1,139 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type='submit'] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .addjob .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .addjob .rightSide-container-2 {
+        padding: 10px !important;
+    }
+}
+
+.addjob {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    /* border-radius: 5px; */
+    /* background-color: #fffaff; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    border-bottom: 2px solid black;
+
+}
+
+.addjob .container {
+    display: flex;
+    /* margin-bottom: 20px; */
+    border-radius: 9px;
+    border: 1px solid black;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #ffffff;
+}
+
+.addjob .leftSide-container {
+    padding: 20px;
+    width: 100%;
+}
+
+.addjob .Tree-thumbnail {
+    display: flex;
+}
+
+.addjob .Tree-thumbnail-rightside {
+    padding-top: 5%;
+}
+
+.addjob .Tree-thumbnail-leftside {
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-radius: 5px;
+    margin: 0 20px 20px 0;
+}
+
+.addjob label {
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.addjob .col-25 {
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+    padding-left: 100px;
+}
+
+.addjob .col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+
+.addjob input[type='text'],
+.addjob input[type='number'],
+.addjob input[type='date'],
+.addjob input[type='email'],
+.addjob input[type='password'],
+.addjob select,
+.addjob textarea {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    background-color: #f2f2f2;
+}
+
+/* Clear floats after the columns */
+.addjob .row:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.addjob .buttonHolder {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    margin: 10px 0 10px 0 ;
+}
+
+.addjob .mandatory-indicator {
+    color: red;
+    margin-left: 5px;
+}
+
+.addjob .error {
+    color: #ff0000;
+    background-color: #ffe6e6;
+    border: 1px solid #ff0000;
+    padding: 0.5em;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.addjob .success {
+    color: #008000;
+    background-color: #e6ffe6;
+    border: 1px solid #008000;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}

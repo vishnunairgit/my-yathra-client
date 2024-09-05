@@ -1,0 +1,104 @@
+.jobView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.jobView .job-card {
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    width: 70%;
+    padding-bottom: 20px;
+
+}
+
+.jobView .Job-First-box {
+    padding: 20px;
+}
+
+
+.jobView button {
+    border-radius: 5px;
+    min-width: 90px;
+}
+
+
+.jobView .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+    font-size: 1.8rem;
+    background-color: #cfccd6;
+    padding: 10px;
+}
+
+.jobView .jobRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 20px;
+
+}
+
+.jobView .jobLabel {
+    flex-basis: 260px;
+    white-space: pre-wrap;
+}
+
+.jobView .Location,
+.Qualifications {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.jobView .job-card h4 {
+    padding: 20px;
+}
+
+
+.jobView p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+
+.jobView .Job-second-box {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.jobView .Applicants {
+    cursor: pointer;
+}
+
+.jobView .Applicants .jobLabel:hover {
+    background-color: rgb(181, 181, 241);
+}
+
+.jobView .Job-Date-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    border-left-width: 15%;
+    width: 80%;
+    margin: 0 auto;
+
+
+}
+
+.jobView .bottum-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+}

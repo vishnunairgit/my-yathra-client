@@ -1,0 +1,12 @@
+/* loading spinner GIF */
+.spinner-container {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh;
+  }
+  
+  .spinner {
+    width: 70px;
+    height: 70px;
+  }

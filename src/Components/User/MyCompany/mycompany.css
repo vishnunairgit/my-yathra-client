@@ -1,0 +1,124 @@
+
+.MYcompany {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+}
+
+/* Main Image Section */
+.mainImg {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mainImg img {
+    height: 490px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* About Us Section */
+.aboutus {
+    background: #fff;
+    padding: 50px 150px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.aboutus h3 {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.aboutus p {
+    text-align: justify;
+}
+
+/* Activities Section */
+.Activities {
+    padding: 20px;
+}
+
+.Activities h3 {
+    text-align: left;
+    padding-left: 30px;
+}
+
+.Activities-main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.first_Activities {
+    width: 350px;
+    margin: 20px;
+}
+
+.first_Activities img {
+    width: 350px;
+    max-height: 190px;
+}
+
+.Activities h5 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Bottom Navigation Section */
+.bottomNav {
+    background-color: #DCDCDC;
+    padding: 30px 50px;
+    border-radius: 8px;
+}
+
+.bottomNav-1 {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.bottomNav-1 img {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.bottomNav-2 {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 0.7fr;
+    gap: 20px;
+    text-align: left;
+}
+
+.bottomNav-2 .first,
+.bottomNav-2 .Second,
+.bottomNav-2 .Third {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.bottomNav-2 .first .companydetails {
+    display: flex;
+    align-items: center;
+}
+
+.bottomNav-2 .first img,
+.bottomNav-2 .Second img,
+.bottomNav-2 .Third img {
+    height: 50px;
+    border-radius: 50px;
+    margin-bottom: 8px;
+}
