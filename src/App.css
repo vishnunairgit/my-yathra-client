@@ -88,14 +88,14 @@
 }
 
 .button_04 {
-  padding: 5px 8px 5px 8px;
-  min-width: 100px;
+  padding: 5px;
+  min-width: 60px;
   width: auto;
   border: none;
-  background-color: #608660;
+  background-color: #0c0c0c;
   color: white;
   border-radius: 8px;
-  cursor: pointer;
-  margin: 10px;
+  /* cursor: pointer; */
+  /* margin: 10px; */
 }
 
