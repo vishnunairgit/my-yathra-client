@@ -23,6 +23,8 @@ function Home() {
         <Routes>
           <Route element={<AdminAuth />}>
             < Route path='/Home' element={< Mycompany />} />
+
+
             {/* < Route path='/AddJobs' element={< AddJobs />} /> */}
             {/* < Route path='/Alljobs' element={< Alljobs />} /> */}
             {/* < Route path='/Jobview/:jobId' element={< Jobview />} /> */}

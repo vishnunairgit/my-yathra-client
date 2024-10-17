@@ -1,197 +1,462 @@
 .scrolling-text-container {
-    width: 100%;
-    padding: 10px;
-    overflow: hidden;
-    background-color: #f9f9f9;
-    white-space: nowrap;
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  white-space: nowrap;
 }
 
 .scrolling-text {
-    display: inline-block;
-    padding-left: 100%;
-    animation: scroll-text 15s linear infinite; 
-    font-size: 30px; 
-    color: #444; 
-    font-family: 'Arial', sans-serif; 
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-text 15s linear infinite;
+  font-size: 30px;
+  color: #444;
+  font-family: 'Arial', sans-serif;
 }
 
 @keyframes scroll-text {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .TripDetails {
-    padding: 30px;
-    background-color: #DCDCDC;
+  padding: 30px;
+  background-color: #DCDCDC;
 
-    /* background-color: #d1cfcd; */
+  /* background-color: #d1cfcd; */
 
-    /* background-color: #dde4e6; */
-} 
+  /* background-color: #dde4e6; */
+}
 
 .CompanyMainImg img {
-    height: 490px;
-    width: 100%;
-    border-radius: 8px;
+  height: 490px;
+  width: 100%;
+  border-radius: 8px;
 }
 
-.carousel {
-    height: 650px;
-    margin: 20px 0;
-    background-color: #fafafa; 
-    border-radius: 10px;
-}
 
-.carousel h3 {
-    padding: 20px;
-    color: #b31111;
-    font-weight: 700;
-}
 /* Make carousel items pop with hover effects */
-.package-item {
-    box-shadow: rgba(60, 64, 67, 0.15) 0px 1px 2px, rgba(60, 64, 67, 0.1) 0px 1px 3px;
-    background-color: #fff;
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+
+
+
+
+
+/* ....................................................... */
+/* carousal */
+/* Container for the entire trips section */
+.trips-details {
+  margin: 20px auto;
+  /* padding: 0 20px; */
+  /* max-width: 1200px; */
 }
 
-.package-item:hover {
-    transform: translateY(-5px);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 3px 6px, rgba(60, 64, 67, 0.15) 0px 2px 4px;
+.trips-details h3 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 30px 0;
+  color: #333;
 }
 
-.package-item img {
-    width: 100%;
-    height: 250px;
-    border-radius: 15px;
-    padding: 10px;
+/* Trip card container */
+.trip-card {
+  background-color: white;
+  border-radius: 10px;
+  /* overflow: hidden; */
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  padding: 15px;
+  text-align: center;
+  /* margin: 10px; */
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Trip image styling */
+.trip-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Trip details section */
+.trip-details {
+  margin-top: 15px;
+}
+
+.Trip-data {
+  display: flex;
+  justify-content:space-between ;
+  margin: 20px 0;
+ 
+}
+.trip-flight, .trip-Hotels, .trip-activities {
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  align-items: center; /* Horizontally center image and text */
+  text-align: center;
 }
 
 
 
 
-.package-item button {
-    position: relative;
-    top: -30px;
-    left: 30%;
+
+
+
+
+
+
+
+.trip-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.package-item p {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
+.trip-details p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
 }
 
-.package-item ul {
-    padding: 0 20px;
-    list-style-type: disc;
+
+
+
+
+
+.trip-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
 }
 
-.package-item li {
-    padding: 5px 0;
+.trip-price-normal,
+.trip-price-discount {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+}
+
+.price-row {
+  display: flex;
+  align-items: center; /* Align the image and price on the same line */
+}
+
+.price-row img {
+  margin-right: 8px;
+}
+
+.price-row p {
+  margin: 0;
+}
+
+.per-person {
+  font-size: 0.8rem; /* Smaller font size for "Per person" */
+  color: #888; /* Grey color for "Per person" */
+  margin-top: 4px; /* Add some space above "Per person" */
+}
+
+
+.trip-price-normal p {
+  text-decoration:line-through;
+  text-decoration-color: red;
+
+}
+
+.trip-price-discount p {
+  color: #28a745; /* Green color for discounted price */
+  font-weight: bold;
+  font-size: 28PX;
+}
+
+
+
+
+
+.per-person {
+  font-size: 0.8rem; /* Smaller font size for "Per person" */
+  color: #888; /* Grey color for "Per person" */
+  margin-top: 4px; /* Add some space above "Per person" */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .trip-price-normal {
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: line-through;
+  text-decoration-color: red;
+
+}
+
+
+
+
+.trip-price-discount {
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  color: #007bff;
+} */
+
+
+
+
+
+
+
+
+
+
+
+.trip-duration {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Book Now button */
+.trip-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.trip-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .trip-image {
+    height: 150px;
+  }
+
+  .trip-details h3 {
     font-size: 16px;
+  }
+
+  .trip-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 
-/* .carousel-indicators {
-    position: relative;
-    top: 94%; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Trips container grid styling */
+/* .trips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.trip-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-10px);
+}
+
+.trip-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.trip-details {
+  padding: 15px;
+}
+
+.trip-details h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.trip-details p {
+  font-size: 14px;
+  color: #666;
+}
+
+.trip-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.trip-price,
+.trip-duration {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.trip-button {
+  background-color: #ff5722;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.trip-button:hover {
+  background-color: #e64a19;
 } */
 
-.carousel-indicators button {
-    width: 20px !important; 
-    height: 20px !important;  
-    background-color: #080808; 
-    border-radius: 50%; 
 
-}
 
-/* .carousel-indicators button.active {
-    background-color: #fff; 
+
+
+
+/* .pagination-button {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 } */
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 35px !important;
-    height: 35px !important;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    background-size: 100% 100%;
-    transition: background-color 0.3s;
-}
-
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.carousel-indicators button {
-    background-color: #444; /* Darker shade */
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-
-.carousel-indicators button.active {
-    background-color: #fff; /* Active indicator color */
-}
-
-.carousel-indicators button:hover {
-    background-color: #777; /* Hover effect for indicators */
-}
+/* .pagination-button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+} */
+/* 
+.pagination-button:hover:not(:disabled) {
+  background-color: #1976d2;
+} */
 
 
 
 
+
+
+/* ................................................................... */
 /* Bottom Navigation Section */
 .bottomLanding {
-    background-color: #DCDCDC;
-    padding: 30px ;
-    border-radius: 8px;
+  background-color: #DCDCDC;
+  padding: 30px;
+  border-radius: 8px;
 }
 
 .bottomLanding-1 {
-    padding-top: 30px;
-    display: flex;
-    justify-content: center;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .bottomLanding-1 img {
-    cursor: pointer;
-    margin-right: 10px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .bottomLanding-2 {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr 0.7fr;
-    gap: 20px;
-    text-align: left;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 0.7fr;
+  gap: 20px;
+  text-align: left;
 }
 
 .bottomLanding-2 .first,
 .bottomLanding-2 .Second,
 .bottomLanding-2 .Third {
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .bottomLanding-2 .first .companydetails {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .bottomLanding-2 .first img,
 .bottomLanding-2 .Second img,
 .bottomLanding-2 .Third img {
-    height: 50px;
-    border-radius: 50px;
-    margin-bottom: 8px;
+  height: 50px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .trips-container {
+    grid-template-columns: 1fr;
+    /* Stack cards in one column */
+  }
+
+  .bottomLanding-2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottomLanding-1 {
+    justify-content: center;
+  }
 }

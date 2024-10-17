@@ -9,16 +9,34 @@ import { useNavigate } from 'react-router-dom';
 function LandingNav() {
 
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
 
   const HandleEmployerLogin = () => {
-        navigate('/EmployerLogin')
-      }
-    
-      const handelHome = () => {
-        navigate('/')
-      }
+    navigate('/EmployerLogin')
+  }
+
+  const handelHome = () => {
+    navigate('/')
+  }
+
+  const handelAbout = () => {
+    navigate('/About')
+  }
+
+  const handelWhyUS = () =>{
+    navigate('/WhyUs')
+  }
+  const handelBookNow = () =>{
+navigate('/BookNow')
+  }
+  const  handleFacilities = ()=>{
+navigate('/OtherFacilities')
+  }
+
+  const handleContact  =()=>{
+    navigate('/Contact')
+  }
 
 
   return (
@@ -32,23 +50,23 @@ function LandingNav() {
       </div>
 
       <div className="dropdown">
-        <button 
-          className="btn" 
-          type="button" 
-          id="dropdownMenuButton1" 
-          data-bs-toggle="dropdown" 
+        <button
+          className="btn"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           <img src={HamburgerMenu} alt="Menu" className="menu-icon" />
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><span className="dropdown-item"  onClick={handelHome} >Home</span></li>
-          <li><span className="dropdown-item" >About Us</span></li>
-          <li><span className="dropdown-item" >Why Us</span></li>
-          <li><span className="dropdown-item" >Book Now</span></li>
-          <li><span className="dropdown-item" >Other Facilities</span></li>
-          <li><span className="dropdown-item" >Contact Us</span></li>
-          <li><span className="dropdown-item"  onClick={HandleEmployerLogin} >Employer Login</span></li>
+          <li><span className="dropdown-item" onClick={handelHome} >Home</span></li>
+          <li><span className="dropdown-item" onClick={handelAbout} > About Us</span></li>
+          <li><span className="dropdown-item" onClick={handelWhyUS} >Why Us</span></li>
+          <li><span className="dropdown-item" onClick={handelBookNow}>Book Now</span></li>
+          <li><span className="dropdown-item" onClick={handleFacilities}>Other Facilities</span></li>
+          <li><span className="dropdown-item" onClick={handleContact}>Contact Us</span></li>
+          <li><span className="dropdown-item" onClick={HandleEmployerLogin} >Employer Login</span></li>
         </ul>
       </div>
     </div>
