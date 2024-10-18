@@ -12,6 +12,11 @@ import Hotels from '../../Assets/my-yathra/icons8-hotel-24.png';
 import Activities from '../../Assets/my-yathra/icons8-trekking-24.png';
 import Rupee24 from '../../Assets/my-yathra/icons8-rupee-24.png';
 import Rupee16 from '../../Assets/my-yathra/icons8-rupee-16.png';
+import instagram from '../../Assets/my-yathra/icons8-instagram-35.png'
+import FaceBook from '../../Assets/my-yathra/icons8-facebook-35.png'
+import location from '../../Assets/my-yathra/icons8-location-24 (1).png'
+import call from '../../Assets/my-yathra/icons8-call-24.png'
+import Logo from '../../Assets/my-yathra/logo.jpeg'
 
 function Landing() {
   const trips1 = [
@@ -80,13 +85,10 @@ function Landing() {
           <Slider {...settings}>
             {domesticTrips.map((trip) => (
               <div key={trip.id} className="trip-card">
-                <img src={trip.companyimg} alt={trip.destination} className="trip-image" />
+                <img src={companyimg} alt={trip.destination} className="trip-image" />
                 <div className="trip-details">
                   <h3>{trip.destination}</h3>
                   <p>{trip.details}</p>
-
-
-                  {/*  */}
 
                   <div className='Trip-data'>
                     <div className='trip-flight'>
@@ -124,14 +126,6 @@ function Landing() {
                       <span className="per-person">Per person</span>
                     </div>
                   </div>
-
-
-                  {/*  */}
-
-
-
-
-
 
                   <button className="trip-button">Book Now</button>
                 </div>
@@ -146,7 +140,7 @@ function Landing() {
           <Slider {...settings}>
             {internationalTrips.map((trip) => (
               <div key={trip.id} className="trip-card">
-                <img src={trip.image} alt={trip.destination} className="trip-image" />
+                <img src={companyimg} alt={trip.destination} className="trip-image" />
                 <div className="trip-details">
                   <h3>{trip.destination}</h3>
                   <p>{trip.details}</p>
@@ -196,6 +190,7 @@ function Landing() {
             ))}
           </Slider>
         </div>
+        
       </div>
 
       {/* Footer */}
@@ -203,26 +198,27 @@ function Landing() {
         <div className='bottomLanding-2'>
           <div className='first'>
             <div className='companydetails'>
-              <h5><strong>CompanyName</strong></h5>
+              <h5><img src={Logo} alt="" /></h5>
             </div>
             <p></p>
           </div>
           <div className='Second'>
-            <h5><strong>Address</strong></h5>
-            <div>my yathra</div>
-            <p>ernakum</p>
+            <img src={location} alt="Location" />
+            <h5><strong>My yathra,</strong> Second floor, JACOB'S DD MALL, Mahatma Gandhi Rd</h5>
+            <div>opposite CENTRAL SQUARE MALL, Shenoys, Kochi,</div>
+            <p>Ernakulam, Kerala 682035</p>
           </div>
           <div className='Third'>
-            <h5><strong>Contact</strong></h5>
+            <h5><strong><img src={call} alt="" /></strong></h5>
             <div>
-              <div>9756000700</div>
+              <div>+ 91 9539 771 777</div>
               <div>Email</div>
             </div>
           </div>
         </div>
         <div className='bottomLanding-1'>
-          <img alt="linkedin" title='linkedin' />
-          <img alt="website" title='website' />
+          <img src={instagram} alt="linkedin" title='instagram' />
+          <img src={FaceBook} alt="FaceBok" title='faceBook' />
         </div>
       </div>
     </div>

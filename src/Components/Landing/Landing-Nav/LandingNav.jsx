@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './landingnav.css';
-import logo from '../../Assets/my-yathra/WhatsApp Image 2024-09-04 at 5.50.35 PM.jpeg';
+import logo from '../../Assets/my-yathra/logo.jpeg';
 import Call from '../../Assets/my-yathra/icons8-call-24 (1).png';
 import HamburgerMenu from '../../Assets/my-yathra/icons8-hamburger-menu-24.png';
 import { useNavigate } from 'react-router-dom';

@@ -199,31 +199,6 @@
 
 
 
-/* .trip-price-normal {
-  display: flex;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: line-through;
-  text-decoration-color: red;
-
-}
-
-
-
-
-.trip-price-discount {
-  display: flex;
-  font-size: 25px;
-  font-weight: bold;
-  color: #007bff;
-} */
-
-
-
-
-
-
-
 
 
 
@@ -298,103 +273,6 @@
 
 
 
-/* Trips container grid styling */
-/* .trips-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
-
-.trip-card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.trip-card:hover {
-  transform: translateY(-10px);
-}
-
-.trip-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.trip-details {
-  padding: 15px;
-}
-
-.trip-details h3 {
-  font-size: 18px;
-  color: #333;
-}
-
-.trip-details p {
-  font-size: 14px;
-  color: #666;
-}
-
-.trip-meta {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.trip-price,
-.trip-duration {
-  font-size: 14px;
-  font-weight: bold;
-  color: #444;
-}
-
-.trip-button {
-  background-color: #ff5722;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.trip-button:hover {
-  background-color: #e64a19;
-} */
-
-
-
-
-
-
-/* .pagination-button {
-  background-color: #2196F3;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  margin: 0 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-} */
-
-/* .pagination-button:disabled {
-  background-color: grey;
-  cursor: not-allowed;
-} */
-/* 
-.pagination-button:hover:not(:disabled) {
-  background-color: #1976d2;
-} */
-
-
-
-
-
-
 /* ................................................................... */
 /* Bottom Navigation Section */
 .bottomLanding {
@@ -432,13 +310,14 @@
 
 .bottomLanding-2 .first .companydetails {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
 .bottomLanding-2 .first img,
 .bottomLanding-2 .Second img,
 .bottomLanding-2 .Third img {
-  height: 50px;
+  height: 30px;
   border-radius: 50px;
   margin-bottom: 8px;
 }
