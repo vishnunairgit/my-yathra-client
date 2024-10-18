@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './navbar.css'
-import logo from '../../Assets/net.america.png';
+import logo from '../../Assets/my-yathra/logo.jpeg';
 import notificationIcon from '../../Assets/icons8-notification-24.png';
 import user from '../../Assets/icons8-user-24.png';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ function Navbar() {
     }
 
     const handleaddjOb = () => {
-        navigate('/AddJobs')
+        navigate('/AddTrips')
     }
 
     const handleAlljobs = () => {
@@ -43,11 +43,11 @@ function Navbar() {
                 <img src={logo} alt="" onClick={handleHome} />
                 <div className="dropdown-jobs">
                     <button className="btn btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span className='jobs'>JOB</span>
+                        <span className='jobs'>TRIP</span>
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><span className="dropdown-item" onClick={handleaddjOb} >Add a New Job</span></li>
-                        <li><span className="dropdown-item" onClick={handleAlljobs} >List All Job</span></li>
+                        <li><span className="dropdown-item" onClick={handleaddjOb} >Add a Trip</span></li>
+                        <li><span className="dropdown-item" onClick={handleAlljobs} >List All Trips</span></li>
                     </ul>
                 </div>
 

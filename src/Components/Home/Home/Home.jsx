@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { AdminAuth } from '../../../Authorization/Authorization';
 
 import Mycompany from '../../User/MyCompany/Mycompany';
+import AddTrips from '../../trips/Add Trip/AddTrips';
 
 // import AddJobs from '../../Jobs/Add Jobs/AddJobs';
 // import Alljobs from '../../Jobs/All Jobs/AllJobs/Alljobs';
@@ -24,8 +25,7 @@ function Home() {
           <Route element={<AdminAuth />}>
             < Route path='/Home' element={< Mycompany />} />
 
-
-            {/* < Route path='/AddJobs' element={< AddJobs />} /> */}
+            < Route path='/AddTrips' element={< AddTrips />} />
             {/* < Route path='/Alljobs' element={< Alljobs />} /> */}
             {/* < Route path='/Jobview/:jobId' element={< Jobview />} /> */}
             {/* < Route path='/EditJob/:jobId' element={< EditJob />} /> */}

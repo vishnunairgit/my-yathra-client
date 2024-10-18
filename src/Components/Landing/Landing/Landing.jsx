@@ -18,7 +18,36 @@ import location from '../../Assets/my-yathra/icons8-location-24 (1).png'
 import call from '../../Assets/my-yathra/icons8-call-24.png'
 import Logo from '../../Assets/my-yathra/logo.jpeg'
 
+
+
 function Landing() {
+
+  const handleInstagram = () => {
+    window.open('https://www.instagram.com/myyathra.in/?hl=en/', '_blank'); 
+}
+
+const handleFaceBook = () => {
+  window.open('https://www.facebook.com/myyathra.in/', '_blank'); 
+}
+
+const handleLocation = () => {
+  window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank'); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const trips1 = [
     { id: 1, destination: 'Paris, France', image: 'https://example.com/paris.jpg', price: '$1200', duration: '7 Days', details: 'Explore the city of lights!', type: 'international' },
     { id: 2, destination: 'New York, USA', image: 'https://example.com/nyc.jpg', price: '$1500', duration: '5 Days', details: 'Experience the Big Apple.', type: 'international' },
@@ -203,7 +232,7 @@ function Landing() {
             <p></p>
           </div>
           <div className='Second'>
-            <img src={location} alt="Location" />
+            <img src={location} alt="Location" title='Location' onClick={handleLocation} />
             <h5><strong>My yathra,</strong> Second floor, JACOB'S DD MALL, Mahatma Gandhi Rd</h5>
             <div>opposite CENTRAL SQUARE MALL, Shenoys, Kochi,</div>
             <p>Ernakulam, Kerala 682035</p>
@@ -217,8 +246,8 @@ function Landing() {
           </div>
         </div>
         <div className='bottomLanding-1'>
-          <img src={instagram} alt="linkedin" title='instagram' />
-          <img src={FaceBook} alt="FaceBok" title='faceBook' />
+          <img src={instagram} alt="linkedin" title='instagram' onClick={handleInstagram}/>
+          <img src={FaceBook} alt="FaceBok" title='faceBook' onClick={handleFaceBook}/>
         </div>
       </div>
     </div>
