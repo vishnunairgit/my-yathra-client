@@ -1,8 +1,10 @@
 
 
 .landing-nav {
-    border-bottom: 2px solid #e3e3e3;
-    background-color: #fff;
+    /* border-bottom: 2px solid #e3e3e3; */
+    /* background-color: #fff; */
+    background-color: #000;
+
     height: 120px;
     position: sticky;
     top: 0;
@@ -23,6 +25,7 @@
     max-width: 12%;
     height: auto;
     margin-right: 20px; /* Space between logo and contact info */
+    border-radius: 5px;
 }
 
 .contact-info {
@@ -38,7 +41,7 @@
 
 .contact-number {
     font-size: 19px;
-    color: #2c3e50;
+    color: #fff;
     margin: 0;
 }
 

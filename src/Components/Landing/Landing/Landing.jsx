@@ -4,7 +4,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import LandingNav from '../Landing-Nav/LandingNav';
 import './landing.css';
-import companyimg from '../../Assets/my-yathra/WhatsApp Image 2024-09-04 at 4.26.16 PM.jpeg';
+import companyimg from '../../Assets/my-yathra/company-img.jpeg';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Flight from '../../Assets/my-yathra/icons8-plane-24.png';
@@ -23,30 +23,16 @@ import Logo from '../../Assets/my-yathra/logo.jpeg'
 function Landing() {
 
   const handleInstagram = () => {
-    window.open('https://www.instagram.com/myyathra.in/?hl=en/', '_blank'); 
-}
+    window.open('https://www.instagram.com/myyathra.in/?hl=en/', '_blank');
+  }
 
-const handleFaceBook = () => {
-  window.open('https://www.facebook.com/myyathra.in/', '_blank'); 
-}
+  const handleFaceBook = () => {
+    window.open('https://www.facebook.com/myyathra.in/', '_blank');
+  }
 
-const handleLocation = () => {
-  window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank'); 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const handleLocation = () => {
+    window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank');
+  }
 
   const trips1 = [
     { id: 1, destination: 'Paris, France', image: 'https://example.com/paris.jpg', price: '$1200', duration: '7 Days', details: 'Explore the city of lights!', type: 'international' },
@@ -96,17 +82,53 @@ const handleLocation = () => {
   };
 
   return (
-    <div className='landing-page'>
+    <div className='landing-page' >
       <LandingNav />
+
 
       <div className="scrolling-text-container">
         <div className="scrolling-text">Welcome To My Yathra</div>
       </div>
 
-      <div className='TripDetails'>
-        <div className='CompanyMainImg'>
+      <div className='Trip'>
+
+        {/* <div className='CompanyMainImg'>
           <img src={companyimg} alt="Company" />
+        </div> */}
+
+        {/*  */}
+
+
+        <div class="CompanyMainImg-container">
+          <img src={companyimg} alt="Image Description" class="CompanyMainImg-image" />
+          <div class="CompanyMainImg-overlay"></div>
+          <div class="CompanyMainImg-text-1">Enjoy Your Vacation With Us</div>
+          <div class="CompanyMainImg-text-2">I have found out that there ain't no surer way to find out whether you like people or hate them than to travel with them</div>
+
         </div>
+
+        {/*  */}
+
+
+
+
+
+
+
+
+
+
+
+
+        {/*  */}
+
+
+
+
+
+
+
+
 
         {/* Domestic Packages Carousel */}
         <div className="trips-details">
@@ -219,37 +241,61 @@ const handleLocation = () => {
             ))}
           </Slider>
         </div>
-        
+
+
+        <div className='aboutus'>
+          <h3>ABOUT US</h3>
+          <div>
+            {/* <p>{company?.About}</p> */}
+            <p>About..........................</p>
+
+          </div>
+        </div>
+
+        <div className='bottomlanding'>
+
+          <div className='bottomlanding-1'>
+            <div className='first'>
+              <div className='companydetails'>
+                {/* {company?.Logo ? (
+                                <img className="logo" src={`${BASE_URL}/UserFiles/${company?.Logo}`} />
+                            ) : (<p>No logo available</p>
+                            )} */}
+                {/* <h5><strong>{company?.CompanyName} </strong></h5> */}
+              </div>
+              {/* <p>{company && company.About
+                            ? company.About.length > 300
+                                ? `${company.About.slice(0, 300)}...`
+                                : company.About
+                            : "Loading or no about text available"}
+                        </p> */}
+            </div>
+            <div className='Second'>
+              <h5><strong>Address</strong> </h5>
+              {/* <div>{company?.CompanyName}</div> */}
+              {/* <p>{company?.Address}</p> */}
+            </div>
+            <div className='Third'>
+              <h5><strong>Contact</strong></h5>
+              <div>
+                {/* <div>{company?.Phonenumber}</div> */}
+                {/* <div>{company?.Email}</div> */}
+              </div>
+            </div>
+          </div>
+
+
+          <div className='bottomlanding-2'>
+            <img src={instagram} alt="linkedin" title='linkedin' onClick={handleInstagram} />
+            <img src={FaceBook} alt="website" title='website' onClick={handleFaceBook} />
+          </div>
+
+
+        </div>
+
       </div>
 
-      {/* Footer */}
-      <div className='bottomLanding'>
-        <div className='bottomLanding-2'>
-          <div className='first'>
-            <div className='companydetails'>
-              <h5><img src={Logo} alt="" /></h5>
-            </div>
-            <p></p>
-          </div>
-          <div className='Second'>
-            <img src={location} alt="Location" title='Location' onClick={handleLocation} />
-            <h5><strong>My yathra,</strong> Second floor, JACOB'S DD MALL, Mahatma Gandhi Rd</h5>
-            <div>opposite CENTRAL SQUARE MALL, Shenoys, Kochi,</div>
-            <p>Ernakulam, Kerala 682035</p>
-          </div>
-          <div className='Third'>
-            <h5><strong><img src={call} alt="" /></strong></h5>
-            <div>
-              <div>+ 91 9539 771 777</div>
-              <div>Email</div>
-            </div>
-          </div>
-        </div>
-        <div className='bottomLanding-1'>
-          <img src={instagram} alt="linkedin" title='instagram' onClick={handleInstagram}/>
-          <img src={FaceBook} alt="FaceBok" title='faceBook' onClick={handleFaceBook}/>
-        </div>
-      </div>
+
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { setUserDetails, setUserId } from '../../ToolKit/userSlice';
 
 function Login({ setloginsignup }) {
   const [loginForm, setLoginForm] = useState({
-    UserName: '',
+    Email: '',
     password: '',
   });
   const [showPwd, setShowPwd] = useState(false);
@@ -81,14 +81,14 @@ function Login({ setloginsignup }) {
         </div>
         <form onSubmit={handleSubmit}>
 
-          {/* User Name */}
+          {/* Email */}
           <div className="form-group">
-            <label htmlFor="UserName">User Name</label>
+            <label htmlFor="UserName">Email</label>
             <input
-              type="text"
-              id="UserName"
-              name="UserName"
-              value={loginForm.UserName}
+              type="email"
+              id="Email"
+              name="Email"
+              value={loginForm.Email}
               onChange={handleChange}
               required
             />

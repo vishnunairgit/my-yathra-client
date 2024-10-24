@@ -2,7 +2,7 @@
 import React from 'react';
 import './landingnav.css';
 import logo from '../../Assets/my-yathra/logo.jpeg';
-import Call from '../../Assets/my-yathra/icons8-call-24 (1).png';
+import Call from '../../Assets/my-yathra/icons8-call-24.png';
 import HamburgerMenu from '../../Assets/my-yathra/icons8-hamburger-menu-24.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -45,7 +45,7 @@ navigate('/OtherFacilities')
         <img src={logo} alt="Company Logo" className='company-logo' />
         <div className='contact-info'>
           <img src={Call} alt="Call Icon" className='call-icon' />
-          <p className='contact-number'> <strong>+91 9539 771 777</strong></p>
+          <p className='contact-number'><strong>+91 9539 771 777</strong></p>
         </div>
       </div>
 

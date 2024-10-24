@@ -1,8 +1,12 @@
+.landing-page{
+  background-color: #000000;
+}
+
 .scrolling-text-container {
   width: 100%;
   padding: 10px;
   overflow: hidden;
-  background-color: #f9f9f9;
+  background-color: #000000;
   white-space: nowrap;
 }
 
@@ -10,8 +14,8 @@
   display: inline-block;
   padding-left: 100%;
   animation: scroll-text 15s linear infinite;
-  font-size: 30px;
-  color: #444;
+  font-size: 40px;
+  color: #fff;
   font-family: 'Arial', sans-serif;
 }
 
@@ -25,20 +29,140 @@
   }
 }
 
-.TripDetails {
-  padding: 30px;
-  background-color: #DCDCDC;
 
-  /* background-color: #d1cfcd; */
 
-  /* background-color: #dde4e6; */
+
+.landing-background {
+    background-image: url('../../Assets/my-yathra/company-img.jpeg');
+    padding: 2rem;
+    height: 100%;
+    background-color: #121618;
+    background-repeat: no-repeat;
+
 }
 
-.CompanyMainImg img {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Trip {
+  padding: 35px;
+ 
+}
+
+
+
+/*  */
+
+.CompanyMainImg-container {
+  position: relative;
+  display: inline-block;
+  /* height: 50%; */
+  width: 100%; /* Ensure the container takes up the full width */
+}
+
+.CompanyMainImg-container img {
+  width: 100%;
+  height: 550px;
+  border-radius: 10px;
+}
+
+
+
+
+
+/* 
+.CompanyMainImg-image {
+  width: 100%;
+  height: 600px;
+  border-radius: 10px;
+} */
+
+.CompanyMainImg-overlay {
+  border-radius: 10px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+}
+
+.CompanyMainImg-text-1 {
+  font-family: Cursive;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better contrast */
+  text-align: center;
+  z-index: 1; /* Ensures text is above the overlay */
+}
+
+.CompanyMainImg-text-2 {
+  font-family: Cursive;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better contrast */
+  text-align: center;
+  z-index: 1; /* Ensures text is above the overlay */
+}
+
+
+/*  */
+
+
+
+
+/* .CompanyMainImg img {
+  position: relative;
+  display: inline-block;
   height: 490px;
   width: 100%;
   border-radius: 8px;
 }
+
+
+.CompanyMainImg-text {
+  position: 'absolute';
+  top: '50%'; 
+  left: '50%';
+  transform: 'translate(-50%, -50%)'; 
+  color: 'white'; 
+  font-size:'24px'; 
+  font-Weight:'bold'; 
+  text-Shadow:'2px 2px 4px rgba(0, 0, 0, 0.5)';
+  text-align: center;
+} */
+
 
 
 /* Make carousel items pop with hover effects */
@@ -50,8 +174,10 @@
 /* ....................................................... */
 /* carousal */
 /* Container for the entire trips section */
-.trips-details {
-  margin: 20px auto;
+
+
+.Trip-Details {
+  /* margin: 20px auto; */
   /* padding: 0 20px; */
   /* max-width: 1200px; */
 }
@@ -61,17 +187,21 @@
   font-weight: bold;
   text-align: center;
   margin: 30px 0 30px 0;
-  color: #333;
+  /* color: #333; */
+  color: #fff;
 }
 
 /* Trip card container */
 .trip-card {
-  background-color: white;
+  /* background-color: white; */
+  background-color: transparent;
   border-radius: 10px;
   /* overflow: hidden; */
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  padding: 15px;
   text-align: center;
   /* margin: 10px; */
+  color: #fff;
+  border: 1px solid white;
 }
 
 .trip-card:hover {
@@ -116,16 +246,16 @@
 
 
 
-.trip-details h3 {
+/* .trip-details h3 {
   font-size: 18px;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
-}
+} */
 
 .trip-details p {
   font-size: 14px;
-  color: #666;
+  color: #fff;
   margin-bottom: 15px;
 }
 
@@ -271,71 +401,100 @@
 
 
 
+/* About Us Section */
+.aboutus {
+  background: #fff;
+  padding: 50px 150px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 90px 0 0 0 ;
+}
 
+.aboutus h3 {
+  text-align: justify;
+  margin-bottom: 10px;
+}
 
-/* ................................................................... */
+.aboutus p {
+  text-align: justify;
+}
+
+/* Activities Section */
+/* .Activities {
+  padding: 20px;
+} */
+
+/* .Activities h3 {
+  text-align: left;
+  padding-left: 30px;
+} */
+
+/* .Activities-main {
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+/* .first_Activities {
+  width: 350px;
+  margin: 20px;
+} */
+
+/* .first_Activities img {
+  width: 350px;
+  max-height: 190px;
+} */
+
+/* .Activities h5 {
+  text-align: center;
+  margin-top: 15px;
+} */
+
 /* Bottom Navigation Section */
-.bottomLanding {
-  background-color: #DCDCDC;
-  padding: 30px;
+
+.bottomlanding {
+  /* background-color: #DCDCDC; */
+  /* padding: 30px 50px; */
   border-radius: 8px;
 }
 
-.bottomLanding-1 {
+.bottomlanding-2 {
   padding-top: 30px;
   display: flex;
   justify-content: center;
 }
 
-.bottomLanding-1 img {
+.bottomlanding-2 img {
   cursor: pointer;
   margin-right: 10px;
 }
 
-.bottomLanding-2 {
+
+
+.bottomlanding-1 {
   display: grid;
   grid-template-columns: 2fr 1.5fr 0.7fr;
   gap: 20px;
   text-align: left;
 }
 
-.bottomLanding-2 .first,
-.bottomLanding-2 .Second,
-.bottomLanding-2 .Third {
+.bottomlanding-1 .first,
+.bottomlanding-1 .Second,
+.bottomlanding-1 .Third {
   padding: 20px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.bottomLanding-2 .first .companydetails {
+.bottomlanding-1 .first .companydetails {
   display: flex;
-  flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
-.bottomLanding-2 .first img,
-.bottomLanding-2 .Second img,
-.bottomLanding-2 .Third img {
-  height: 30px;
+.bottomlanding-1 .first img,
+.bottomlanding-1 .Second img,
+.bottomlanding-1 .Third img {
+  height: 50px;
   border-radius: 50px;
   margin-bottom: 8px;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .trips-container {
-    grid-template-columns: 1fr;
-    /* Stack cards in one column */
-  }
-
-  .bottomLanding-2 {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .bottomLanding-1 {
-    justify-content: center;
-  }
 }
