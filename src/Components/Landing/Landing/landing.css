@@ -1,12 +1,20 @@
+
+
+body {
+  background: linear-gradient(to bottom, #000000, #333333);
+  color: white;
+}
+
+
 .landing-page{
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 
 .scrolling-text-container {
   width: 100%;
-  padding: 10px;
+  padding: 0px;
   overflow: hidden;
-  background-color: #000000;
+  /* background-color: #000000; */
   white-space: nowrap;
 }
 
@@ -14,8 +22,8 @@
   display: inline-block;
   padding-left: 100%;
   animation: scroll-text 15s linear infinite;
-  font-size: 40px;
-  color: #fff;
+  font-size: 30px;
+  color: whitesmoke;
   font-family: 'Arial', sans-serif;
 }
 
@@ -36,7 +44,7 @@
     background-image: url('../../Assets/my-yathra/company-img.jpeg');
     padding: 2rem;
     height: 100%;
-    background-color: #121618;
+    /* background-color: #121618; */
     background-repeat: no-repeat;
 
 }
@@ -64,9 +72,8 @@
 
 
 
-.Trip {
+.Trip-landing {
   padding: 35px;
- 
 }
 
 
@@ -114,8 +121,8 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 50px;
+  color: gold;
+  font-size: 35px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better contrast */
   text-align: center;
@@ -128,8 +135,8 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  font-size: 24px;
+  color: gold;
+  font-size: 20px;
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better contrast */
   text-align: center;
@@ -183,12 +190,13 @@
 }
 
 .trips-details h3 {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 500;
   text-align: center;
   margin: 30px 0 30px 0;
+  color: whitesmoke;
   /* color: #333; */
-  color: #fff;
+  /* color: #fff; */
 }
 
 /* Trip card container */
@@ -200,8 +208,8 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  padding: 15px;
   text-align: center;
   /* margin: 10px; */
-  color: #fff;
-  border: 1px solid white;
+  color: rgb(216, 216, 198);
+  border: 1px solid rgb(243, 241, 233);
 }
 
 .trip-card:hover {
@@ -255,7 +263,7 @@
 
 .trip-details p {
   font-size: 14px;
-  color: #fff;
+  /* color: siver; */
   margin-bottom: 15px;
 }
 
@@ -268,7 +276,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .trip-price-normal,
@@ -290,9 +298,10 @@
   margin: 0;
 }
 
-.per-person {
-  font-size: 0.8rem; /* Smaller font size for "Per person" */
-  color: #888; /* Grey color for "Per person" */
+.per-person{
+  font-size: 0.7rem; 
+  /* Smaller font size for "Per person" */
+  color:slategray; /* Grey color for "Per person" */
   margin-top: 4px; /* Add some space above "Per person" */
 }
 
@@ -305,19 +314,12 @@
 
 .trip-price-discount p {
   color: #28a745; /* Green color for discounted price */
-  font-weight: bold;
+  font-weight: 500;
   font-size: 28PX;
 }
 
 
 
-
-
-.per-person {
-  font-size: 0.8rem; /* Smaller font size for "Per person" */
-  color: #888; /* Grey color for "Per person" */
-  margin-top: 4px; /* Add some space above "Per person" */
-}
 
 
 
@@ -402,20 +404,22 @@
 
 
 /* About Us Section */
-.aboutus {
-  background: #fff;
+.aboutus-landing {
+  background-color:transparent;
   padding: 50px 150px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 90px 0 0 0 ;
+  /* box-shadow: 0 0 10px whitesmoke(0, 0, 0, 0.1); */
+  margin: 50px 0 50px 0 ;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
 }
 
-.aboutus h3 {
+.aboutus-landing h3 {
   text-align: justify;
   margin-bottom: 10px;
 }
 
-.aboutus p {
+.aboutus-landing {
   text-align: justify;
 }
 
@@ -451,10 +455,16 @@
 
 /* Bottom Navigation Section */
 
+
+
+
+
+
 .bottomlanding {
-  /* background-color: #DCDCDC; */
+  background-color: transparent;
   /* padding: 30px 50px; */
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  /* border: 1px solid white; */
 }
 
 .bottomlanding-2 {
@@ -481,9 +491,12 @@
 .bottomlanding-1 .Second,
 .bottomlanding-1 .Third {
   padding: 20px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color:whitesmoke;
+  border: 1px solid white;
+
 }
 
 .bottomlanding-1 .first .companydetails {

@@ -90,7 +90,7 @@ function Landing() {
         <div className="scrolling-text">Welcome To My Yathra</div>
       </div>
 
-      <div className='Trip'>
+      <div className='Trip-landing'>
 
         {/* <div className='CompanyMainImg'>
           <img src={companyimg} alt="Company" />
@@ -172,7 +172,7 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>350000</p>
+                        <p>350000.</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -243,7 +243,7 @@ function Landing() {
         </div>
 
 
-        <div className='aboutus'>
+        <div className='aboutus-landing'>
           <h3>ABOUT US</h3>
           <div>
             {/* <p>{company?.About}</p> */}
@@ -252,11 +252,13 @@ function Landing() {
           </div>
         </div>
 
-        <div className='bottomlanding'>
 
+
+        <div className='bottomlanding'>
           <div className='bottomlanding-1'>
             <div className='first'>
               <div className='companydetails'>
+                fbfbfbf
                 {/* {company?.Logo ? (
                                 <img className="logo" src={`${BASE_URL}/UserFiles/${company?.Logo}`} />
                             ) : (<p>No logo available</p>
@@ -271,15 +273,15 @@ function Landing() {
                         </p> */}
             </div>
             <div className='Second'>
-              <h5><strong>Address</strong> </h5>
-              {/* <div>{company?.CompanyName}</div> */}
-              {/* <p>{company?.Address}</p> */}
+              <h5><strong>Address :</strong> </h5>
+              <div>MY YATHRA </div>
+              <p>2 floor, JACOB'S DD MALL, Mahatma Gandhi Rd, opposite CENTRAL SQUARE MALL, Shenoys, Kochi, Ernakulam, Kerala 682035</p>
             </div>
             <div className='Third'>
-              <h5><strong>Contact</strong></h5>
+              <h5><strong>Contact :</strong></h5>
               <div>
-                {/* <div>{company?.Phonenumber}</div> */}
-                {/* <div>{company?.Email}</div> */}
+                <div>9756000700</div>
+                <div>ingo@hhdhhhdhhfh</div>
               </div>
             </div>
           </div>
