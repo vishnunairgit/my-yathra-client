@@ -7,7 +7,6 @@ body {
 
 
 .landing-page{
-  /* background-color: #000000; */
 }
 
 .scrolling-text-container {
@@ -144,238 +143,157 @@ body {
 }
 
 
+
+
+
 /*  */
 
 
-
-
-/* .CompanyMainImg img {
-  position: relative;
-  display: inline-block;
-  height: 490px;
-  width: 100%;
-  border-radius: 8px;
-}
-
-
-.CompanyMainImg-text {
-  position: 'absolute';
-  top: '50%'; 
-  left: '50%';
-  transform: 'translate(-50%, -50%)'; 
-  color: 'white'; 
-  font-size:'24px'; 
-  font-Weight:'bold'; 
-  text-Shadow:'2px 2px 4px rgba(0, 0, 0, 0.5)';
-  text-align: center;
-} */
-
-
-
-/* Make carousel items pop with hover effects */
-
-
-
-
-
-/* ....................................................... */
-/* carousal */
-/* Container for the entire trips section */
-
-
-.Trip-Details {
-  /* margin: 20px auto; */
-  /* padding: 0 20px; */
-  /* max-width: 1200px; */
+.trips-details {
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .trips-details h3 {
-  font-size: 26px;
-  font-weight: 500;
   text-align: center;
-  margin: 30px 0 30px 0;
-  color: whitesmoke;
-  /* color: #333; */
-  /* color: #fff; */
+  font-size: 1.8rem;
+  color: #f5f6f8;
+  margin-bottom: 15px;
 }
 
-/* Trip card container */
 .trip-card {
-  /* background-color: white; */
-  background-color: transparent;
-  border-radius: 10px;
-  /* overflow: hidden; */
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  padding: 15px;
-  text-align: center;
-  /* margin: 10px; */
-  color: rgb(216, 216, 198);
-  border: 1px solid rgb(243, 241, 233);
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  border: 1px solid whitesmoke;
+  margin-top: 5px;
 }
 
 .trip-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  
 }
 
-/* Trip image styling */
 .trip-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  border-radius: 20px;
+
 }
 
-/* Trip details section */
+
+
+
+
 .trip-details {
-  margin-top: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trip-details h3 {
+  font-size: 1.5rem;
+  /* color: #333; */
+  color: wheat;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.trip-details p {
+  font-size: 1rem;
+  /* color: #555; */
+  color: whitesmoke;
+  text-align: center;
 }
 
 .Trip-data {
   display: flex;
-  justify-content:space-between ;
-  margin: 20px 0;
- 
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 15px;
 }
-.trip-flight, .trip-Hotels, .trip-activities {
+.trip-flight, 
+.trip-Hotels, 
+.trip-activities {
   display: flex;
-  flex-direction: column; /* Stack image and text vertically */
-  align-items: center; /* Horizontally center image and text */
+  flex-direction: column; 
+  align-items: center; 
   text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-/* .trip-details h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+/* .Trip-data div {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
 } */
 
-.trip-details p {
-  font-size: 14px;
-  /* color: siver; */
-  margin-bottom: 15px;
+.Trip-data img {
+  /* margin-right: 8px; */
+  width: 20px;
 }
-
-
-
-
-
 
 .trip-meta {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 5px;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
 }
 
 .trip-price-normal,
 .trip-price-discount {
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0px;
 }
 
 .price-row {
   display: flex;
-  align-items: center; /* Align the image and price on the same line */
+  align-items: center;
 }
 
 .price-row img {
-  margin-right: 8px;
+  width: 18px;
+  /* margin-right: 2px; */
 }
 
-.price-row p {
-  margin: 0;
+.per-person {
+  font-size: 0.8rem;
+  color: #999;
 }
-
-.per-person{
-  font-size: 0.7rem; 
-  /* Smaller font size for "Per person" */
-  color:slategray; /* Grey color for "Per person" */
-  margin-top: 4px; /* Add some space above "Per person" */
-}
-
 
 .trip-price-normal p {
-  text-decoration:line-through;
+  font-size: 1.1rem;
+  color: #999;
+  text-decoration: line-through;
   text-decoration-color: red;
-
+  margin-bottom: 0px;
 }
 
 .trip-price-discount p {
-  color: #28a745; /* Green color for discounted price */
-  font-weight: 500;
-  font-size: 28PX;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: green;
+  margin-bottom: 0px;
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.trip-duration {
-  font-size: 14px;
-  color: #888;
+.slick-dots li button:before {
+  color: whitesmoke !important;
 }
-
-/* Book Now button */
-.trip-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.trip-button:hover {
-  background-color: #0056b3;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .trip-image {
-    height: 150px;
-  }
-
-  .trip-details h3 {
-    font-size: 16px;
-  }
-
-  .trip-meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-
-
-
-
 
 
 

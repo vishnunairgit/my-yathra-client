@@ -19,7 +19,7 @@ function Navbar() {
         navigate('/Home')
     }
 
-    const handleaddjOb = () => {
+    const handleaddTrip = () => {
         navigate('/AddTrips')
     }
 
@@ -41,12 +41,12 @@ function Navbar() {
             <div className='nav-leftside'>
 
                 <img src={logo} alt="" onClick={handleHome} />
-                <div className="dropdown-jobs">
+                <div className="dropdown-trip">
                     <button className="btn btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <span className='jobs'>TRIP</span>
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><span className="dropdown-item" onClick={handleaddjOb} >Add a Trip</span></li>
+                        <li><span className="dropdown-item" onClick={handleaddTrip} >Add a Trip</span></li>
                         <li><span className="dropdown-item" onClick={handleAlljobs} >List All Trips</span></li>
                     </ul>
                 </div>

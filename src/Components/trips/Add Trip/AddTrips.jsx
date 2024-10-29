@@ -13,9 +13,8 @@ function Addtrips() {
     Flights: "",
     Hotels: "",
     Activities: "",
-    Amount: "",
-    DiscountAmount: "",
-    TripType: "",
+    TripAmount: "",
+    TripDiscountAmount: "",
 
   })
 
@@ -54,15 +53,13 @@ function Addtrips() {
   return (
 
 
-
     <div className='Trip'>
       <h3>Add A TRIP</h3>
-
+      
       <form onSubmit={handletrip} >
 
         <div className='container'>
           <div className='Tripcontainer'>
-
 
             <div className="row">
               <div className="col-25">

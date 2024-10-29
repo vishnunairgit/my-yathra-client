@@ -74,7 +74,7 @@ function Landing() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         }
       }
@@ -156,9 +156,7 @@ function Landing() {
                       <img src={Activities} alt="Activities" />
                       <p>3 activities</p>
                     </div>
-
                   </div>
-
 
                   <div className="trip-meta">
                     <div className="trip-price-normal">
@@ -172,18 +170,19 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>350000.</p>
+                        <p>350000</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
                   </div>
 
-                  <button className="trip-button">Book Now</button>
+                  <button className="button_01">Book Now</button>
                 </div>
               </div>
             ))}
           </Slider>
         </div>
+
 
         {/* International Packages Carousel */}
         <div className="trips-details">
@@ -214,7 +213,6 @@ function Landing() {
 
                   </div>
 
-
                   <div className="trip-meta">
                     <div className="trip-price-normal">
                       <div className="price-row">
@@ -235,7 +233,7 @@ function Landing() {
 
 
 
-                  <button className="trip-button">Book Now</button>
+                  <button className="button_01">Book Now</button>
                 </div>
               </div>
             ))}
