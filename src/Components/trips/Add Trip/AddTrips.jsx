@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import './addtrips.css'
 import { AddTrip } from '../../../Api/Trips';
+import { useNavigate } from 'react-router-dom';
 
 
 function Addtrips() {
 
-  const [trip, settrip] = useState({
+  const navigate = useNavigate();
 
+
+  const [trip, settrip] = useState({
     TripTitle: " ",
     TripLocations: " ",
     TripDuration: "",
@@ -15,13 +18,28 @@ function Addtrips() {
     Activities: "",
     TripAmount: "",
     TripDiscountAmount: "",
+  });
 
-  })
+  const [companyFiles, setcompanyFiles] = useState({
+    TripFile: '',
+  });
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target
     settrip({ ...trip, [name]: value })
   }
+
+  const uploadcompanyFile = (e) => {
+    const file = e.target.files[0];
+    const fileName = e.target.name;
+    setcompanyFiles({ ...companyFiles, [fileName]: file })
+  }
+
+
+
+
 
   const handletrip = async (e) => {
     e.preventDefault();
@@ -29,13 +47,42 @@ function Addtrips() {
 
     try {
 
-      const AddTripData = {
-        ...trip,
-        Date: new Date().toISOString()
+      const formData = new FormData();
+
+
+      for (const key in trip) {
+        formData.append(key, trip[key]);
       }
-      const response = await AddTrip(AddTripData)
+
+      if (companyFiles.logoFile) {
+        formData.append('logoFile', companyFiles.logoFile);
+      }
+      if (companyFiles.imageFile) {
+        formData.append('imageFile', companyFiles.imageFile);
+      }
+
+      console.log(companyFiles);
+
+
+
+
+      // const AddTripData = {
+      //   ...trip, ...companyFiles,
+      //   Date: new Date().toISOString()
+      // }
+
+      formData.append('Date', new Date().toISOString());
+
+
+      // const response = await AddTrip(AddTripData)
+      const response = await AddTrip(formData)
+
+
+
       if (response.message === 'trip data Added successfully') {
-        alert('Job Added successfully')
+        alert('Trip Added successfully')
+        navigate('/Home');
+
       } else {
         alert('Internal Server Error')
       }
@@ -52,10 +99,9 @@ function Addtrips() {
 
   return (
 
-
     <div className='Trip'>
       <h3>Add A TRIP</h3>
-      
+
       <form onSubmit={handletrip} >
 
         <div className='container'>
@@ -222,6 +268,24 @@ function Addtrips() {
                 </select>
               </div>
             </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label htmlFor="about">UPLOAD IMAGE</label>
+              </div>
+
+              <div className="col-75">
+                <input
+                  type="file"
+                  name="TripFile"
+                  accept="image/*"
+                  onChange={uploadcompanyFile}
+
+                />
+              </div>
+            </div>
+
+           
 
           </div>
 
