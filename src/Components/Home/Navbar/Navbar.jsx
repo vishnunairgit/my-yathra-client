@@ -24,7 +24,7 @@ function Navbar() {
     }
 
     const handleAlljobs = () => {
-        navigate('./Alljobs')
+        navigate('./AllTrip')
     }
 
     const handleprofile = () => {

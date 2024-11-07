@@ -2,16 +2,22 @@ import React, { useState } from 'react'
 import './addtrips.css'
 import { AddTrip } from '../../../Api/Trips';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function Addtrips() {
-
   const navigate = useNavigate();
+
+  const userId = useSelector(state => state.user.userDetails.userId);
+  console.log(userId,'-----------userid---------');
+  
+
 
 
   const [trip, settrip] = useState({
-    TripTitle: " ",
-    TripLocations: " ",
+    CreatedBy: '',
+    TripTitle: "",
+    TripLocations: "",
     TripDuration: "",
     Flights: "",
     Hotels: "",
@@ -20,8 +26,10 @@ function Addtrips() {
     TripDiscountAmount: "",
   });
 
+
+
   const [companyFiles, setcompanyFiles] = useState({
-    TripFile: '',
+    TripFile: ""
   });
 
 
@@ -35,35 +43,42 @@ function Addtrips() {
     const file = e.target.files[0];
     const fileName = e.target.name;
     setcompanyFiles({ ...companyFiles, [fileName]: file })
+    console.log(file);
+
   }
-
-
-
 
 
   const handletrip = async (e) => {
     e.preventDefault();
 
 
+
     try {
 
-      const formData = new FormData();
+      const addJobData = { 
+        ...trip, 
+        ...companyFiles, // This includes the file data
+        CreatedBy: userId,
+        Date: new Date().toISOString(),
+      };
+  
+      const response = await AddTrip(addJobData);
+
+      // const formData = new FormData();
+
+      // formData.append('Date', new Date().toISOString());
+      // formData.append('CreatedBy', userId); 
 
 
-      for (const key in trip) {
-        formData.append(key, trip[key]);
-      }
+      // for (const key in trip) {
+      //   formData.append(key, trip[key]);
+      // }
 
-      if (companyFiles.logoFile) {
-        formData.append('logoFile', companyFiles.logoFile);
-      }
-      if (companyFiles.imageFile) {
-        formData.append('imageFile', companyFiles.imageFile);
-      }
+      // if (companyFiles.TripFile) {
+      //   formData.append('TripFile', companyFiles.TripFile);
+      // }
 
-      console.log(companyFiles);
-
-
+      // console.log(companyFiles);
 
 
       // const AddTripData = {
@@ -71,11 +86,11 @@ function Addtrips() {
       //   Date: new Date().toISOString()
       // }
 
-      formData.append('Date', new Date().toISOString());
+     
 
 
       // const response = await AddTrip(AddTripData)
-      const response = await AddTrip(formData)
+      // const response = await AddTrip(formData)
 
 
 
@@ -92,9 +107,6 @@ function Addtrips() {
       alert('An error occurred while adding the job');
     }
   }
-
-
-
 
 
   return (
@@ -284,8 +296,6 @@ function Addtrips() {
                 />
               </div>
             </div>
-
-           
 
           </div>
 
