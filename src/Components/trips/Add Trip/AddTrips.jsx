@@ -15,7 +15,7 @@ function Addtrips() {
 
 
   const [trip, settrip] = useState({
-    CreatedBy: '',
+    CreatedBy: "",
     TripTitle: "",
     TripLocations: "",
     TripDuration: "",
@@ -48,65 +48,80 @@ function Addtrips() {
   }
 
 
+  // const handletrip = async (e) => {
+  //   e.preventDefault();
+
+
+
+  //   try {
+
+      
+  
+
+  //     const formData = new FormData();
+
+  //     formData.append('Date', new Date().toISOString());
+  //     formData.append('CreatedBy', userId); 
+
+
+  //     for (const key in trip) {
+  //       formData.append(key, trip[key]);
+  //     }
+
+
+
+  //     // if (companyFiles.TripFile) {
+  //     //   formData.append('TripFile', companyFiles.TripFile);
+  //     // }
+
+
+
+  //     const response = await AddTrip(formData)
+
+  //     if (response.message === 'trip data Added successfully') {
+  //       alert('Trip Added successfully')
+  //       navigate('/Home');
+
+  //     } else {
+  //       alert('Internal Server Error')
+  //     }
+
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert('An error occurred while adding the job');
+  //   }
+  // }
+
   const handletrip = async (e) => {
     e.preventDefault();
 
-
-
     try {
+        const formData = new FormData();
+        formData.append('Date', new Date().toISOString());
+        formData.append('CreatedBy', userId);
 
-      const addJobData = { 
-        ...trip, 
-        ...companyFiles, // This includes the file data
-        CreatedBy: userId,
-        Date: new Date().toISOString(),
-      };
-  
-      const response = await AddTrip(addJobData);
+        for (const key in trip) {
+            formData.append(key, trip[key]);
+        }
 
-      // const formData = new FormData();
+        if (companyFiles.TripFile) {
+            formData.append('TripFile', companyFiles.TripFile);
+        }
 
-      // formData.append('Date', new Date().toISOString());
-      // formData.append('CreatedBy', userId); 
+        const response = await AddTrip(formData);
 
-
-      // for (const key in trip) {
-      //   formData.append(key, trip[key]);
-      // }
-
-      // if (companyFiles.TripFile) {
-      //   formData.append('TripFile', companyFiles.TripFile);
-      // }
-
-      // console.log(companyFiles);
-
-
-      // const AddTripData = {
-      //   ...trip, ...companyFiles,
-      //   Date: new Date().toISOString()
-      // }
-
-     
-
-
-      // const response = await AddTrip(AddTripData)
-      // const response = await AddTrip(formData)
-
-
-
-      if (response.message === 'trip data Added successfully') {
-        alert('Trip Added successfully')
-        navigate('/Home');
-
-      } else {
-        alert('Internal Server Error')
-      }
-
+        if (response.message === 'Trip data added successfully') {
+            alert('Trip added successfully');
+            navigate('/Home');
+        } else {
+            alert('Internal Server Error');
+        }
     } catch (error) {
-      console.log(error);
-      alert('An error occurred while adding the job');
+        console.error("Error in handletrip:", error);
+        alert('An error occurred while adding the trip');
     }
-  }
+};
+
 
 
   return (
