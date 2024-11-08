@@ -1,136 +1,4 @@
-// import React, { useState } from 'react'
-// import './addtrips.css'
-// import { AddTrip } from '../../../Api/Trips';
-// import { useNavigate } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 
-
-// function Addtrips() {
-
-//   const navigate = useNavigate();
-//   const userId = useSelector(state => state.user.userDetails.userId);
-//   // console.log(userId,'-----------userid---------');
-  
-
-
-
-//   const [trip, settrip] = useState({
-//     CreatedBy: "",
-//     TripTitle: "",
-//     TripLocations: "",
-//     TripDuration: "",
-//     Flights: "",
-//     Hotels: "",
-//     Activities: "",
-//     TripAmount: "",
-//     TripDiscountAmount: "",
-//   });
-
-
-
-//   const [companyFiles, setCompanyFiles] = useState({
-//     TripFile: "",
-//   });
-
-
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target
-//     settrip({ ...trip, [name]: value })
-//   }
-
-//   // const uploadcompanyFile = (e) => {
-//   //   const file = e.target.files[0];
-//   //   const fileName = e.target.name;
-//   //   setcompanyFiles({ ...companyFiles, [fileName]: file })
-//   //   console.log(file);
-
-//   // }
-//   const uploadCompanyFile = (e) => {
-//     const file = e.target.files[0];
-//     setCompanyFiles({ TripFile: file });
-//   };
-
-  
-
-
-
-
-
-//   // const handletrip = async (e) => {
-//   //   e.preventDefault();
-
-
-
-//   //   try {
-
-      
-  
-
-//   //     const formData = new FormData();
-
-//   //     formData.append('Date', new Date().toISOString());
-//   //     formData.append('CreatedBy', userId); 
-
-
-//   //     for (const key in trip) {
-//   //       formData.append(key, trip[key]);
-//   //     }
-
-
-
-//   //     // if (companyFiles.TripFile) {
-//   //     //   formData.append('TripFile', companyFiles.TripFile);
-//   //     // }
-
-
-
-//   //     const response = await AddTrip(formData)
-
-//   //     if (response.message === 'trip data Added successfully') {
-//   //       alert('Trip Added successfully')
-//   //       navigate('/Home');
-
-//   //     } else {
-//   //       alert('Internal Server Error')
-//   //     }
-
-//   //   } catch (error) {
-//   //     console.log(error);
-//   //     alert('An error occurred while adding the job');
-//   //   }
-//   // }
-
-//   const handletrip = async (e) => {
-//     e.preventDefault();
-
-//     try {
-//       const formData = new FormData();
-
-//       for (const key in trip) {
-//         formData.append(key, trip[key]);
-//       }
-
-//       formData.append('CreatedBy', userId);
-//       formData.append('Date', new Date().toISOString());
-
- 
-
-
-//       const response = await AddTrip(formData);
-
-
-//         if (response.message === 'Trip data Added successfully') {
-//             alert('Trip added successfully');
-//             navigate('/Home');
-//         } else {
-//             alert('Internal Server Error');
-//         }
-//     } catch (error) {
-//         console.error("Error in handletrip:", error);
-//         alert('An error occurred while adding the trip');
-//     }
-// };
 
 
 import React, { useState } from 'react';
@@ -142,11 +10,10 @@ import { useSelector } from 'react-redux';
 function Addtrips() {
   const navigate = useNavigate();
   const userId = useSelector(state => state.user.userDetails.userId);
-  console.log(userId,'-----------------------userId------------------');
-  
+  console.log(userId, '-----------------------userId------------------');
+
 
   const [trip, setTrip] = useState({
-    CreatedBy: userId,
     TripTitle: "",
     TripLocations: "",
     TripDuration: "",
@@ -172,46 +39,36 @@ function Addtrips() {
   };
 
 
-const handleTrip = async (e) => {
+  const handleTrip = async (e) => {
     e.preventDefault();
 
     try {
-        const formData = new FormData();
+      const formData = new FormData();
 
-        // Only add CreatedBy once as a string
-        if (userId) {
-          formData.append('CreatedBy', userId);
+      formData.append('Date', new Date().toISOString());
+      formData.append('CreatedBy', userId);  // Make sure `userId` is a single string, not an array.
+
+      for (const key in trip) {
+        formData.append(key, trip[key]);
       }
 
-        for (const key in trip) {
-            formData.append(key, trip[key]);
-        }
+      if (companyFiles.TripFile) {
+        formData.append('TripFile', companyFiles.TripFile);
+      }
 
+      const response = await AddTrip(formData);
 
-
-
-        if (companyFiles.TripFile) {
-            formData.append('TripFile', companyFiles.TripFile);
-        }
-
-        // Check the format of CreatedBy in formData
-        console.log("FormData before sending:", Array.from(formData.entries()));
-
-        const response = await AddTrip(formData);
-
-        if (response.message === 'Trip data Added successfully') {
-            alert('Trip added successfully');
-            navigate('/Home');
-        } else {
-            alert('Internal Server Error');
-        }
+      if (response.message === 'Trip data Added successfully') {
+        alert('Trip added successfully');
+        navigate('/Home');
+      } else {
+        alert('Internal Server Error');
+      }
     } catch (error) {
-        console.error("Error in handletrip:", error);
-        alert('An error occurred while adding the trip');
+      console.error("Error in handletrip:", error);
+      alert('An error occurred while adding the trip');
     }
-};
-
-
+  };
 
 
   return (
