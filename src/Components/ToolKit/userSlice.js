@@ -8,7 +8,7 @@ const INITIAL_STATE = {
 };
 
 const userSlice = createSlice({
-  name: 'user',
+  name:'user',
   initialState: INITIAL_STATE,
   reducers: {
     setUserDetails: (state, action) => {

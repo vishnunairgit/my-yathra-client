@@ -12,20 +12,34 @@ import AxiosInstance from "../Config/AxiosInstance";
 // };
 
 
-// add trip
+
 export const AddTrip = async (addTrips) => {
     try {
-        const response = await AxiosInstance.post('/AddTrip', addTrips, {
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        });
+        const response = await AxiosInstance.post('/AddTrip', addTrips);
         return response.data;
     } catch (error) {
         console.error("Error while adding the trip:", error);
         throw error;
     }
 };
+
+
+
+
+// // add trip
+// export const AddTrip = async (addTrips) => {
+//     try {
+//         const response = await AxiosInstance.post('/AddTrip', addTrips, {
+//             headers: {
+//                 'Content-Type': 'multipart/form-data',
+//             },
+//         });
+//         return response.data;
+//     } catch (error) {
+//         console.error("Error while adding the trip:", error);
+//         throw error;
+//     }
+// };
 
 
 // Get jobs
