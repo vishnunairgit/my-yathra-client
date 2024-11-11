@@ -38,7 +38,7 @@ function Landing() {
     { id: 1, destination: 'Paris, France', image: 'https://example.com/paris.jpg', price: '$1200', duration: '7 Days', details: 'Explore the city of lights!', type: 'international' },
     { id: 2, destination: 'New York, USA', image: 'https://example.com/nyc.jpg', price: '$1500', duration: '5 Days', details: 'Experience the Big Apple.', type: 'international' },
     { id: 3, destination: 'Maldives', image: 'https://example.com/maldives.jpg', price: '$2000', duration: '6 Days', details: 'Relax in paradise.', type: 'international' },
-    { id: 4, destination: 'Tokyo, Japan', image: 'https://example.com/tokyo.jpg', price: '$1800', duration: '8 Days', details: 'Discover the wonders of Tokyo.', type: 'international' },
+    { id: 4, destination: 'Tokyo, Japan', image: 'https://example.com/tokyo.jpg', price: '$1800', duration: '8 Days', details: 'Discover the wonders', type: 'international' },
     { id: 5, destination: 'Goa, India', image: 'https://example.com/goa.jpg', price: '$500', duration: '5 Days', details: 'Relax on beautiful beaches.', type: 'international' },
     { id: 6, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'international' },
     { id: 7, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },

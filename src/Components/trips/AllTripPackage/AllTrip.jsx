@@ -40,7 +40,7 @@ function AllTrip() {
 
 
   return (
-    <div className="trip-list">
+    <div className="ALLtrip-list">
       <h2>All Trips</h2>
       <div className="trip-container">
         {AllTrips.map((trip) => {

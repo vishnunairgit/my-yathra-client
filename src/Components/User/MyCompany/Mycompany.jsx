@@ -53,6 +53,7 @@ function Mycompany() {
 
     return (
         <div className='MYcompany'>
+
             <div className='mainImg'>
                 {company?.Image ? (
                     <img className="logo" src={`${BASE_URL}/UserFiles/${company?.Image}`} />

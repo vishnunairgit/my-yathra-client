@@ -28,11 +28,11 @@ function Navbar() {
     }
 
     const handleprofile = () => {
-        navigate('/UserView')
+        navigate('/ViewCompnay')
     }
 
     const handlecompany = () => {
-        navigate('/Mycompany')
+        navigate('/MyCompany')
     }
 
     return (

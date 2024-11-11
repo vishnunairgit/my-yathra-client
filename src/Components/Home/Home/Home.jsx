@@ -6,6 +6,7 @@ import { AdminAuth } from '../../../Authorization/Authorization';
 import Mycompany from '../../User/MyCompany/Mycompany';
 import AddTrips from '../../trips/Add Trip/AddTrips';
 import AllTrip from '../../trips/AllTripPackage/AllTrip';
+import ViewCompnay from '../../User/CompanyView/ViewCompnay';
 
 // import AddJobs from '../../Jobs/Add Jobs/AddJobs';
 // import Alljobs from '../../Jobs/All Jobs/AllJobs/Alljobs';
@@ -28,10 +29,10 @@ function Home() {
 
             < Route path='/AddTrips' element={< AddTrips />} />
             < Route path='/AllTrip' element={< AllTrip />} />
-            {/* < Route path='/Jobview/:jobId' element={< Jobview />} /> */}
+            < Route path='/ViewCompnay' element={< ViewCompnay />} />
             {/* < Route path='/EditJob/:jobId' element={< EditJob />} /> */}
             {/* < Route path='/UserView' element={<UserView />} /> */}
-            {/* < Route path='/Mycompany' element={<Mycompany />} /> */}
+            < Route path='/Mycompany' element={<Mycompany />} />
             {/* < Route path='/UserEdit/:userId' element={<UserEdit />} /> */}
             {/* < Route path='/UserEdit/:userId/Updatepassword' element={< Updatepassword />} /> */}
             {/* < Route path='/Notifications' element={< Notifications />} /> */}
