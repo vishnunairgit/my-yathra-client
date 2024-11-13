@@ -1,12 +1,14 @@
 
 
 body {
-  background: linear-gradient(to bottom, #000000, #333333);
+  /* background: linear-gradient(to bottom, #000000, #333333); */
   color: white;
 }
 
 
 .landing-page{
+  background: linear-gradient(to bottom, #000000, #333333);
+
 }
 
 .scrolling-text-container {

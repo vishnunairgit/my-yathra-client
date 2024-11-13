@@ -23,7 +23,7 @@
     }
   }
   
-  .User {
+  .Company {
     margin-bottom: 20px;
     padding-bottom: 5px;
     /* border-radius: 5px; */
@@ -32,8 +32,9 @@
     border-bottom: 2px solid black;
   
   }
+
   
-  .User .container {
+  .Company .container {
     display: flex;
     /* margin-bottom: 20px; */
     border-radius: 9px;
@@ -42,52 +43,52 @@
     background-color: #ffffff;
   }
   
-  .User .leftSide-container {
+  .Company .leftSide-container {
     padding: 20px;
     width: 100%;
   }
   
-  .User .Tree-thumbnail {
+  .Company .Tree-thumbnail {
     display: flex;
   }
   
-  .User .Tree-thumbnail-rightside {
+  .Company .Tree-thumbnail-rightside {
     padding-top: 5%;
   }
   
-  .User .Tree-thumbnail-leftside {
+  .Company .Tree-thumbnail-leftside {
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     border-radius: 5px;
     margin: 0 20px 20px 0;
   }
   
-  .User label {
+  .Company label {
     width: 100%;
     padding: 10px 10px 10px 0;
     display: inline-block;
     text-align: left;
   }
   
-  .User .col-25 {
+  .Company .col-25 {
     float: left;
     width: 40%;
     margin-top: 6px;
     padding-left: 100px;
   }
   
-  .User .col-75 {
+  .Company .col-75 {
     float: left;
     width: 60%;
     margin-top: 6px;
   }
   
-  .User input[type='text'],
-  .User input[type='number'],
-  .User input[type='date'],
-  .User input[type='email'],
-  .User input[type='password'],
-  .User select,
-  .User textarea {
+  .Company input[type='text'],
+  .Company input[type='number'],
+  .Company input[type='date'],
+  .Company input[type='email'],
+  .Company input[type='password'],
+  .Company select,
+  .Company textarea {
     width: 70%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -97,25 +98,25 @@
   }
   
   /* Clear floats after the columns */
-  .User .row:after {
+  .Company .row:after {
     content: '';
     display: table;
     clear: both;
   }
   
-  .User .buttonHolder {
+  .Company .buttonHolder {
     display: flex;
     justify-content: space-around;
     background-color: transparent;
     margin: 10px 0 10px 0;
   }
   
-  .User .mandatory-indicator {
+  .Company .mandatory-indicator {
     color: red;
     margin-left: 5px;
   }
   
-  .User .error {
+  .Company .error {
     color: #ff0000;
     background-color: #ffe6e6;
     border: 1px solid #ff0000;
@@ -126,7 +127,7 @@
     text-align: center;
   }
   
-  .User .success {
+  .Company .success {
     color: #008000;
     background-color: #e6ffe6;
     border: 1px solid #008000;
@@ -137,19 +138,19 @@
     text-align: center;
   }
   
-  .User .file-view img {
+  .Company .file-view img {
     margin-left: 30px;
   
   }
   
-  .User .files {
+  .Company .files {
     display: flex;
     align-items: center;
     justify-content: space-around;
   
   }
   
-  .User .files img {
+  .Company .files img {
     max-width: 200px;
   
   } 

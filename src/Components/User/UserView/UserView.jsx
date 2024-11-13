@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { BASE_URL } from '../../../Constants/BaseUrl';
 import { formatDateForInput } from '../../../Helpers/Helpers';
 import loadingGif from '../../../Components/Assets/loading...gif';
+import Loading from '../../Loading/Loading';
 
 
 
@@ -37,15 +38,11 @@ function UserView() {
   }, [userId])
 
   if (loading) {
-    return (
-      <div className="spinner-container">
-        <img src={loadingGif} alt="Loading..." className="spinner" />
-      </div>
-    );
-  };
+    return <Loading />;
+}
 
   if (errors) {
-    return <div>Error: {errors.message}</div>;
+    return <div>Error: {errors.message || 'Something went wrong'}</div>;
   }
 
   const handleEdit = () => {
