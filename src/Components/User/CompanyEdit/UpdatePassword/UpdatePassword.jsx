@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { updateUserpassword } from '../../../../Api/User';
+import { UpdateCompanyPassword } from '../../../../Api/MyCompany';
 import pwd from '../../../Assets/AssetsProvider';
-// import './updatepassword.css'
+import './updatepassword.css'
 
-function Updatepassword() {
+function UpdatePassword() {
   const { userId } = useParams();
   const navigate = useNavigate();
 
@@ -76,13 +77,15 @@ function Updatepassword() {
     }
 
     try {
-      debugger
-      const response = await updateUserpassword(userId, password)
+    //   debugger
+      const response = await UpdateCompanyPassword(userId, password)
 
       if (response.message === "Password updated successfully") {
         alert('Password updated successfully!');
         setSuccessMessage(response.message);
-        navigate(`/UserEdit/${userId}`);
+        // navigate(`/UserEdit/${userId}`);
+        navigate(`/EditCompany/${userId}`);
+
         setErrors({});
       } else {
         setErrors({ form: "Password update failed. Please try again." });
@@ -235,4 +238,4 @@ function Updatepassword() {
 }
 
 
-export default Updatepassword
+export default UpdatePassword

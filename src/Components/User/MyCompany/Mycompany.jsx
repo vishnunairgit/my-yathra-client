@@ -1,104 +1,113 @@
 
 
+import { useNavigate } from 'react-router-dom';
+import Loading from '../../Loading/Loading';
 
 import React, { useEffect, useState } from 'react';
-import linkedin from "../../Assets/icons8-linked-in-35.png";
-import website from '../../Assets/icons8-website-35.png'
+import Instagram from '../../Assets/my-yathra/icons8-instagram-35.png'
+import FaceBook from '../../Assets/my-yathra/icons8-facebook-35.png'
 import "./mycompany.css"
 import { BASE_URL } from '../../../Constants/BaseUrl';
-import { Getuser } from '../../../Api/User';
-import loadingGif from '../../../Components/Assets/loading...gif';
+import { GetMycompany } from '../../../Api/MyCompany'
 import { useSelector } from 'react-redux';
 
 function Mycompany() {
     const userId = useSelector(state => state.user.userDetails.userId);
 
-    const [company, setcompany] = useState(null)
+    const [mycompany, setmycompany] = useState()
     const [loading, setloading] = useState(true);
-    const [errors, seterrors] = useState(null);
+    const [errors, seterrors] = useState(null)
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchcompany = async () => {
             try {
-                const companyData = await Getuser(userId)
-                setcompany(companyData);
+                const companyData = await GetMycompany(userId);
+                setmycompany(companyData)
                 setloading(false)
             } catch (error) {
                 seterrors(error)
                 setloading(false)
             }
         }
+
         if (userId) {
-            fetchcompany()
+            fetchcompany();
         } else {
             console.warn('No userId found');
+            navigate('/login'); // Redirect to login if userId is missing
+
         }
-    }, [userId])
+
+    }, [userId , navigate])
 
     if (loading) {
-        return (
-            <div className="spinner-container">
-                <img src={loadingGif} alt="Loading..." className="spinner" />
-            </div>
-        );
+        return <Loading />;
     }
 
+    if (errors) {
+        return <div>Error: {errors.message || 'Something went wrong'}</div>;
+    }
+
+
     const handlelinkedin = () => {
-        window.open(company.Linkedin, '_blank')
+        window.open(mycompany.FaceBook, '_blank')
     }
 
     const handlewebsite = () => {
-        window.open(company?.Website, '_blank');
+        window.open(mycompany?.Instagram, '_blank');
     }
 
     return (
         <div className='MYcompany'>
 
             <div className='mainImg'>
-                {company?.Image ? (
-                    <img className="logo" src={`${BASE_URL}/UserFiles/${company?.Image}`} />
+                {mycompany?.Image ? (
+                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.Image}`} />
                 ) : (<p>No image available</p>
                 )}
             </div>
             <div className='aboutus'>
                 <h3>ABOUT US</h3>
                 <div>
-                    <p>{company?.About}</p>
+                    <p>{mycompany?.About}</p>
                 </div>
             </div>
             <div className='bottomNav'>
                 <div className='bottomNav-2'>
                     <div className='first'>
                         <div className='companydetails'>
-                            {company?.Logo ? (
-                                <img className="logo" src={`${BASE_URL}/UserFiles/${company?.Logo}`} />
+                            {mycompany?.Logo ? (
+                                <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.Logo}`} />
                             ) : (<p>No logo available</p>
                             )}
-                            <h5><strong>{company?.CompanyName} </strong></h5>
+                            <h5><strong>{mycompany?.CompanyName} </strong></h5>
                         </div>
-                        <p>{company && company.About
-                            ? company.About.length > 300
-                                ? `${company.About.slice(0, 300)}...`
-                                : company.About
+                        <p>{mycompany && mycompany.About
+                            ? mycompany.About.length > 300
+                                ? `${mycompany.About.slice(0, 300)}...`
+                                : mycompany.About
                             : "Loading or no about text available"}
                         </p>
                     </div>
                     <div className='Second'>
                         <h5><strong>Address</strong> </h5>
-                        <div>{company?.CompanyName}</div>
-                        <p>{company?.Address}</p>
+                        <div>{mycompany?.CompanyName}</div>
+                        <p>{mycompany?.Address}</p>
                     </div>
                     <div className='Third'>
                         <h5><strong>Contact</strong></h5>
                         <div>
-                            <div>{company?.Phonenumber}</div>
-                            <div>{company?.Email}</div>
+                            <div>{mycompany?.Phonenumber}</div>
+                            <div>{mycompany?.Email}</div>
                         </div>
                     </div>
                 </div>
                 <div className='bottomNav-1'>
-                    <img src={linkedin} alt="linkedin" title='linkedin' onClick={handlelinkedin} />
-                    <img src={website} alt="website" title='website' onClick={handlewebsite} />
+                    <img src={FaceBook} alt="FaceBook" title='FaceBook' onClick={handlelinkedin} />
+                    <img src={Instagram} alt="Instagram" title='Instagram' onClick={handlewebsite} />
+
                 </div>
             </div>
         </div>

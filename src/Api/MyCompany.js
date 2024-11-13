@@ -50,9 +50,9 @@ export const UpdateCompany = async (userId, formData) => {
 // };
 
 
-export const updatecompanypassword = async (userId, userData) => {
+export const UpdateCompanyPassword = async (userId, userData) => {
     try {
-        const response = await AxiosInstance.put(`/updatecompanypassword/${userId}`, userData);
+        const response = await AxiosInstance.put(`/UpdateCompanyPassword/${userId}`, userData);
         return response.data;
     } catch (error) {
         console.error("Error updating user:", error);

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { GetMycompany, UpdateCompany } from '../../../Api/User';
+import { GetMycompany, UpdateCompany } from '../../../Api/MyCompany';
 import '../UserView/user.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
@@ -8,10 +8,11 @@ import Loading from '../../Loading/Loading';
 
 function EditCompany() {
     const { userId } = useParams();
+    
     const [company, setcompany] = useState(null);
     const [companyData, setcompanyData] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [errors, setErrors] = useState({});
+    const [loading, setloading] = useState(true);
+    const [errors, setErrors] = useState(null)
 
     const [CompanyFiles, setCompanyFiles] = useState({
         logoFile: '',
@@ -21,23 +22,27 @@ function EditCompany() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchCompany = async () => {
+        const fetchcompany = async () => {
             try {
-                const companyData = await GetMycompany(userId);
-                setcompany(companyData);
-                setcompanyData(companyData);
-                setLoading(false);
+                const Data = await GetMycompany(userId);
+                setcompany(Data)
+                setcompanyData(Data)
+                setloading(false)
             } catch (error) {
-                setErrors({ fetch: error.message });
-                setLoading(false);
+                setErrors(error)
+                setloading(false)
             }
-        };
+        }
+
         if (userId) {
-            fetchCompany();
+            fetchcompany();
         } else {
             console.warn('No userId found');
+            navigate('/login'); // Redirect to login if userId is missing
+
         }
-    }, [userId]);
+
+    }, [userId , navigate])
 
     if (loading) {
         return <Loading />;
@@ -49,7 +54,7 @@ function EditCompany() {
 
     const handleCompanyChange = (e) => {
         const { name, value } = e.target;
-        setcompanyData({ ...companyData, [name]: value });
+        setcompanyData({...companyData, [name]: value });
     };
 
     // File management
@@ -76,7 +81,7 @@ function EditCompany() {
 
             await UpdateCompany(userId, formData);
             alert('User updated successfully!');
-            navigate('/UserView');
+            navigate('/ViewCompnay');
         } catch (error) {
             console.error("Error updating user:", error);
             setErrors(error);
@@ -84,11 +89,11 @@ function EditCompany() {
     };
 
     const updatePassword = () => {
-        navigate(`/UserEdit/${userId}/UpdatePassword`);
+        navigate(`/EditCompany/${userId}/UpdatePassword`);
     };
 
     const handleBack = () => {
-        navigate('/Home');
+        navigate('/ViewCompnay');
     };
 
 
@@ -113,7 +118,7 @@ function EditCompany() {
                                     name="CompanyName"
                                     placeholder="CompanyName..."
                                     onChange={handleCompanyChange}
-                                    
+                                    value={companyData.CompanyName || ''}
                                     required
                                 />
                             </div>
@@ -131,6 +136,7 @@ function EditCompany() {
                                     type="text"
                                     name="Email"
                                     placeholder="Email..."
+                                    value={companyData.Email || ''}
                                     readOnly
                                     required
                                 />
@@ -150,7 +156,7 @@ function EditCompany() {
                                     name="Phonenumber"
                                     placeholder="Phonenumber..."
                                     onChange={handleCompanyChange}
-                                    // value={userData.Phonenumber || ''}
+                                    value={companyData.Phonenumber || ''}
                                     required
                                 />
                             </div>
@@ -169,7 +175,7 @@ function EditCompany() {
                                     name="Address"
                                     placeholder="Address..."
                                     onChange={handleCompanyChange}
-                                    // value={userData.Address || ''}
+                                    value={companyData.Address || ''}
                                     required
                                 />
                             </div>
@@ -178,17 +184,17 @@ function EditCompany() {
                         {/* FACEBOOK */}
                         <div className="row">
                             <div className="col-25">
-                                <label htmlFor="Website">
+                                <label htmlFor="FaceBook">
                                 FACEBOOK <span className="mandatory-indicator">*</span>
                                 </label>
                             </div>
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    name="Facebook"
-                                    placeholder="Facebook..."
+                                    name="FaceBook"
+                                    placeholder="FaceBook..."
                                     onChange={handleCompanyChange}
-                                    // value={userData.Website || ''}
+                                    value={companyData.FaceBook || ''}
                                     required
                                 />
                             </div>
@@ -197,17 +203,17 @@ function EditCompany() {
                         {/* LinkedIn */}
                         <div className="row">
                             <div className="col-25">
-                                <label htmlFor="instagram">
+                                <label htmlFor="Instagram">
                                 INSTAGRAM <span className="mandatory-indicator">*</span>
                                 </label>
                             </div>
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    name="instagram"
-                                    placeholder="instagram..."
+                                    name="Instagram"
+                                    placeholder="Instagram..."
                                     onChange={handleCompanyChange}
-                                    // value={userData.LinkedIn || ''}
+                                    value={companyData.Instagram || ''}
                                     required
                                 />
                             </div>
@@ -226,7 +232,7 @@ function EditCompany() {
                                     name="About"
                                     placeholder="About..."
                                     onChange={handleCompanyChange}
-                                    // value={userData.About || ''}
+                                    value={companyData.About || ''}
                                     required
                                 />
                             </div>

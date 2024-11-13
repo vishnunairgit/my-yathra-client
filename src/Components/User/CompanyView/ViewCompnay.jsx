@@ -46,13 +46,14 @@ function ViewCompnay() {
     }
 
 
+    const handleEdit = ()=>{
+        navigate(`/EditCompany/${userId}`);
+    }
+    
     const handleback = () => {
         navigate('/Home')
     }
 
-    const handleEdit = ()=>{
-        navigate(`/EditCompany/${userId}`);
-    }
 
 
     return (
@@ -78,7 +79,7 @@ function ViewCompnay() {
                                     name="CompanyName"
                                     placeholder="CompanyName..."
                                     readOnly
-                                    //   value={user.CompanyName}
+                                      value={mycompany.CompanyName}
                                     required
                                 />
                             </div>
@@ -136,7 +137,7 @@ function ViewCompnay() {
                                     name="Address"
                                     placeholder="Address..."
                                     readOnly
-                                    //   value={user?.Address}
+                                    value={mycompany.Address}
                                     required
                                 />
                             </div>
@@ -156,7 +157,7 @@ function ViewCompnay() {
                                     name="Facebook"
                                     placeholder="Facebook ID..."
                                     readOnly
-                                    //   value={user?.Website}
+                                    value={mycompany.FaceBook || ''}
                                     required
                                 />
                             </div>
@@ -165,18 +166,18 @@ function ViewCompnay() {
                         {/* LINKEDLN ID */}
                         <div className="row">
                             <div className="col-25">
-                                <label htmlFor="LinkedIn">
+                                <label htmlFor="Instagram">
                                     INSTAGRAM
                                 </label>
                             </div>
                             <div className="col-75">
                                 <input
                                     type="text"
-                                    id="instagram"
-                                    name="instagram"
-                                    placeholder="instagram Id..."
+                                    id="Instagram"
+                                    name="Instagram"
+                                    placeholder="Instagram Id..."
                                     readOnly
-                                    //   value={user?.LinkedIn}
+                                    value={mycompany.Instagram}
                                     required
                                 />
                             </div>
@@ -196,7 +197,7 @@ function ViewCompnay() {
                                     name="About"
                                     placeholder="About..."
                                     readOnly
-                                    //   value={user?.About}
+                                    value={mycompany.About}
                                     required
                                 />
                             </div>

@@ -8,16 +8,7 @@ import AddTrips from '../../trips/Add Trip/AddTrips';
 import AllTrip from '../../trips/AllTripPackage/AllTrip';
 import ViewCompnay from '../../User/CompanyView/ViewCompnay';
 import EditCompany from '../../User/CompanyEdit/EditCompany';
-
-// import AddJobs from '../../Jobs/Add Jobs/AddJobs';
-// import Alljobs from '../../Jobs/All Jobs/AllJobs/Alljobs';
-// import Jobview from '../../Jobs/Job view/Jobview';
-// import EditJob from '../../Jobs/Job Edit/EditJob';
-// import UserEdit from '../../User/UserEdit/UserEdit';
-// import Updatepassword from '../../User/UserEdit/UpdateUserpassword/Updatepassword';
-// import UserView from '../../User/UserView/UserView';
-// import Notifications from '../../Notifications/Notifications';
-
+import UpdatePassword from '../../User/CompanyEdit/UpdatePassword/UpdatePassword';
 
 function Home() {
   return (
@@ -27,12 +18,11 @@ function Home() {
         <Routes>
           <Route element={<AdminAuth />}>
             < Route path='/Home' element={< Mycompany />} />
-
             < Route path='/AddTrips' element={< AddTrips />} />
             < Route path='/AllTrip' element={< AllTrip />} />
             < Route path='/ViewCompnay' element={< ViewCompnay />} />
-
             < Route path='/EditCompany/:userId' element={<EditCompany />} />
+            < Route path='/EditCompany/:userId/Updatepassword' element={< UpdatePassword />} />
 
 
             {/* < Route path='/EditJob/:jobId' element={< EditJob />} /> */}
