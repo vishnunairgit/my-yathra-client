@@ -159,11 +159,11 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.trips-details h3 {
+.trips-details h4 {
   text-align: center;
-  font-size: 1.8rem;
-  color: #f5f6f8;
-  margin-bottom: 15px;
+  /* font-size: 1.8rem; */
+  color: gold;
+  margin: 10px 0 10px 0;
 }
 
 .trip-card {

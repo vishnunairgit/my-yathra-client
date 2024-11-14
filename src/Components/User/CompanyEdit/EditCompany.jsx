@@ -8,6 +8,8 @@ import Loading from '../../Loading/Loading';
 
 function EditCompany() {
     const { userId } = useParams();
+    const navigate = useNavigate();
+
     
     const [company, setcompany] = useState(null);
     const [companyData, setcompanyData] = useState({});
@@ -19,7 +21,6 @@ function EditCompany() {
         imageFile: '',
     });
 
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchcompany = async () => {

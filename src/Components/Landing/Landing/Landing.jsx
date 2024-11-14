@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import LandingNav from '../Landing-Nav/LandingNav';
 import './landing.css';
@@ -18,6 +18,10 @@ import location from '../../Assets/my-yathra/icons8-location-24 (1).png'
 import call from '../../Assets/my-yathra/icons8-call-24.png'
 import Logo from '../../Assets/my-yathra/logo.jpeg'
 
+import { GetTrips } from '../../../Api/Trips';
+import Loading from '../../Loading/Loading';
+import { BASE_URL } from '../../../Constants/BaseUrl';
+
 
 
 function Landing() {
@@ -34,25 +38,6 @@ function Landing() {
     window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank');
   }
 
-  const trips1 = [
-    { id: 1, destination: 'Paris, France', image: 'https://example.com/paris.jpg', price: '$1200', duration: '7 Days', details: 'Explore the city of lights!', type: 'international' },
-    { id: 2, destination: 'New York, USA', image: 'https://example.com/nyc.jpg', price: '$1500', duration: '5 Days', details: 'Experience the Big Apple.', type: 'international' },
-    { id: 3, destination: 'Maldives', image: 'https://example.com/maldives.jpg', price: '$2000', duration: '6 Days', details: 'Relax in paradise.', type: 'international' },
-    { id: 4, destination: 'Tokyo, Japan', image: 'https://example.com/tokyo.jpg', price: '$1800', duration: '8 Days', details: 'Discover the wonders', type: 'international' },
-    { id: 5, destination: 'Goa, India', image: 'https://example.com/goa.jpg', price: '$500', duration: '5 Days', details: 'Relax on beautiful beaches.', type: 'international' },
-    { id: 6, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'international' },
-    { id: 7, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-    { id: 8, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-    { id: 9, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-    { id: 10, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-    { id: 11, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-    { id: 12, destination: 'Kerala, India', image: 'https://example.com/kerala.jpg', price: '$600', duration: '6 Days', details: 'Experience the backwaters.', type: 'domestic' },
-
-  ];
-
-  // Filter domestic and international trips
-  const domesticTrips = trips1.filter(trip => trip.type === 'domestic');
-  const internationalTrips = trips1.filter(trip => trip.type === 'international');
 
   // Carousel settings
   const settings = {
@@ -81,6 +66,49 @@ function Landing() {
     ]
   };
 
+
+  // 
+
+  const [allTrips, setAllTrips] = useState([]);
+  const [domesticTrips, setDomesticTrips] = useState([]);
+  const [internationalTrips, setInternationalTrips] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+
+  useEffect(() => {
+    const fetchTrips = async () => {
+      try {
+        const tripData = await GetTrips();
+        setAllTrips(tripData);
+
+        const domestic = tripData.filter(trip => trip.TripType === 'domestic');
+        const international = tripData.filter(trip => trip.TripType === 'international');
+
+
+        setDomesticTrips(domestic);
+        setInternationalTrips(international);
+
+      } catch (error) {
+        setError(error);
+      }
+      finally {
+        setLoading(false);
+      }
+    }
+    fetchTrips();
+  }, [])
+
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error: {error.message || 'Something went wrong'}</div>;
+  }
+
   return (
     <div className='landing-page' >
       <LandingNav />
@@ -90,7 +118,7 @@ function Landing() {
         <div className="scrolling-text">Welcome To My Yathra</div>
       </div>
 
-      <div className='Trip-landing'>
+      <div className='Trip-]landing'>
 
         {/* <div className='CompanyMainImg'>
           <img src={companyimg} alt="Company" />
@@ -107,54 +135,39 @@ function Landing() {
 
         </div>
 
-        {/*  */}
-
-
-
-
-
-
-
-
-
-
-
-
-        {/*  */}
-
-
-
-
-
-
-
-
 
         {/* Domestic Packages Carousel */}
         <div className="trips-details">
-          <h3>Domestic Packages</h3>
+          <h4>Domestic Packages</h4>
           <Slider {...settings}>
             {domesticTrips.map((trip) => (
               <div key={trip.id} className="trip-card">
-                <img src={companyimg} alt={trip.destination} className="trip-image" />
+
+                <h4>{trip.TripTitle}</h4>
+                {trip.TripFile ? (
+                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip.TripFile.split('\\').pop()}`} alt="trip-image" />
+                ) : (
+                  <p>No logo</p>
+                )}
+
                 <div className="trip-details">
-                  <h3>{trip.destination}</h3>
-                  <p>{trip.details}</p>
+                  <h4>{trip.TripLocations}kk</h4>
+                  <p>{trip.TripDuration}</p>
 
                   <div className='Trip-data'>
                     <div className='trip-flight'>
                       <img src={Flight} alt="Flights" />
-                      <p> 3 Flights </p>
+                      <p> {trip.Flights} Flights </p>
                     </div>
 
                     <div className='trip-Hotels'>
                       <img src={Hotels} alt="Hotels" />
-                      <p>4 Hotels</p>
+                      <p>{trip.Hotels} Hotels</p>
                     </div>
 
                     <div className='trip-activities'>
                       <img src={Activities} alt="Activities" />
-                      <p>3 activities</p>
+                      <p>{trip.Activities} Activities</p>
                     </div>
                   </div>
 
@@ -162,7 +175,7 @@ function Landing() {
                     <div className="trip-price-normal">
                       <div className="price-row">
                         <img src={Rupee16} alt="Normal Price" />
-                        <p>390000</p>
+                        <p>{trip.TripAmount}</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -170,7 +183,7 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>350000</p>
+                        <p>{trip.TripDiscountAmount}</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -186,11 +199,17 @@ function Landing() {
 
         {/* International Packages Carousel */}
         <div className="trips-details">
-          <h3>International Packages</h3>
+          <h4>International Packages</h4>
           <Slider {...settings}>
             {internationalTrips.map((trip) => (
               <div key={trip.id} className="trip-card">
-                <img src={companyimg} alt={trip.destination} className="trip-image" />
+
+                <h4>{trip.TripTitle}</h4>
+                {trip.TripFile ? (
+                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip.TripFile.split('\\').pop()}`} alt="trip-image" />
+                ) : (
+                  <p>No logo</p>
+                )}
                 <div className="trip-details">
                   <h3>{trip.destination}</h3>
                   <p>{trip.details}</p>
@@ -198,17 +217,17 @@ function Landing() {
                   <div className='Trip-data'>
                     <div className='trip-flight'>
                       <img src={Flight} alt="Flights" />
-                      <p> 3 Flights </p>
+                      <p> {trip.Flights} Flights </p>
                     </div>
 
                     <div className='trip-Hotels'>
                       <img src={Hotels} alt="Hotels" />
-                      <p>4 Hotels</p>
+                      <p>{trip.Hotels} Hotels</p>
                     </div>
 
                     <div className='trip-activities'>
                       <img src={Activities} alt="Activities" />
-                      <p>3 activities</p>
+                      <p>{trip.Activities} Activities</p>
                     </div>
 
                   </div>
@@ -217,7 +236,7 @@ function Landing() {
                     <div className="trip-price-normal">
                       <div className="price-row">
                         <img src={Rupee16} alt="Normal Price" />
-                        <p>390000</p>
+                        <p>{trip.TripAmount}</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -225,7 +244,7 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>350000</p>
+                        <p>{trip.TripDiscountAmount}</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>

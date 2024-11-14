@@ -3,6 +3,7 @@ import './allTrip.css'
 import { GetTrips } from '../../../Api/Trips'
 import Loading from '../../Loading/Loading';
 import { BASE_URL } from '../../../Constants/BaseUrl';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -11,6 +12,8 @@ function AllTrip() {
   const [AllTrips, setAllTrips] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchTrips = async () => {
@@ -34,8 +37,13 @@ function AllTrip() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message || 'Something went wrong'}</div>;
   }
+
+  const handleEdit = (tripId) => {
+    navigate(`/UpdateTrip/${tripId}`);
+  };
+  
 
 
 
@@ -61,7 +69,7 @@ function AllTrip() {
                 <p>No logo</p>
               )}
 
-              <input className='button_01' type="button" value="edit" />
+              <input className='button_01' type="button" value="edit" onClick={() => handleEdit(trip._id)}/>
 
             </div>
           );

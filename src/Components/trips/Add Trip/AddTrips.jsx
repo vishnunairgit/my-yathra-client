@@ -22,6 +22,7 @@ function Addtrips() {
     Activities: "",
     TripAmount: "",
     TripDiscountAmount: "",
+    TripType: "",
   });
 
   const [companyFiles, setCompanyFiles] = useState({
@@ -81,6 +82,7 @@ function Addtrips() {
         <div className='container'>
           <div className='Tripcontainer'>
 
+            {/*Trip Titel  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="TripTitle">
@@ -99,6 +101,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/*Trip Location  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="TripLocations">
@@ -117,6 +120,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/*Trip Duration  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="TripDuration">
@@ -135,6 +139,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/* Trip Flights  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="Flights">
@@ -153,6 +158,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/* Trip Hotels  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="Hotels">
@@ -171,6 +177,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/* Trip Activities  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="Activities">
@@ -189,6 +196,7 @@ function Addtrips() {
               </div>
             </div>
 
+            {/*  TripAmount  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="TripAmount">
@@ -207,6 +215,8 @@ function Addtrips() {
               </div>
             </div>
 
+          
+            {/*  TripDiscountAmount  */}
             <div className="row">
               <div className="col-25">
                 <label htmlFor="TripDiscountAmount">
@@ -225,14 +235,15 @@ function Addtrips() {
               </div>
             </div>
 
+            {/* tripType  */}
             <div className="row">
               <div className="col-25">
-                <label htmlFor="tripType">
+                <label htmlFor="TripType">
                   TRIP TYPE <span className="mandatory-indicator">*</span>
                 </label>
               </div>
               <div className="col-75">
-                <select name="tripType" onChange={handleChange} >
+                <select name="TripType" onChange={handleChange} >
                   <option value="" disabled selected>
                     Select Trip Type
                   </option>

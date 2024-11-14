@@ -9,6 +9,7 @@ import AllTrip from '../../trips/AllTripPackage/AllTrip';
 import ViewCompnay from '../../User/CompanyView/ViewCompnay';
 import EditCompany from '../../User/CompanyEdit/EditCompany';
 import UpdatePassword from '../../User/CompanyEdit/UpdatePassword/UpdatePassword';
+import UpdateTrip from '../../trips/Update Trip/UpdateTrip';
 
 function Home() {
   return (
@@ -20,6 +21,10 @@ function Home() {
             < Route path='/Home' element={< Mycompany />} />
             < Route path='/AddTrips' element={< AddTrips />} />
             < Route path='/AllTrip' element={< AllTrip />} />
+            <Route path="/UpdateTrip/:tripId" element={<UpdateTrip />} />
+
+
+
             < Route path='/ViewCompnay' element={< ViewCompnay />} />
             < Route path='/EditCompany/:userId' element={<EditCompany />} />
             < Route path='/EditCompany/:userId/Updatepassword' element={< UpdatePassword />} />
