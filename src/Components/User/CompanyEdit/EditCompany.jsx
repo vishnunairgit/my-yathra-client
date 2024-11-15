@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { GetMycompany, UpdateCompany } from '../../../Api/MyCompany';
-import '../UserView/user.css';
+// import '../UserView/user.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
 
