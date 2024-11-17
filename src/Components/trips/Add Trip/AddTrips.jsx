@@ -12,7 +12,6 @@ function Addtrips() {
   const userId = useSelector(state => state.user.userDetails.userId);
   console.log(userId, '-----------------------userId------------------');
 
-
   const [trip, setTrip] = useState({
     TripTitle: "",
     TripLocations: "",

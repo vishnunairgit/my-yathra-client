@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import LandingNav from '../Landing-Nav/LandingNav';
@@ -14,6 +13,8 @@ import Rupee24 from '../../Assets/my-yathra/icons8-rupee-24.png';
 import Rupee16 from '../../Assets/my-yathra/icons8-rupee-16.png';
 import instagram from '../../Assets/my-yathra/icons8-instagram-35.png'
 import FaceBook from '../../Assets/my-yathra/icons8-facebook-35.png'
+import logo from '../../Assets/my-yathra/logo.jpeg';
+
 
 import { GetTrips, GetMycompany } from '../../../Api/Trips';
 import Loading from '../../Loading/Loading';
@@ -30,16 +31,23 @@ function Landing() {
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState(null);
 
-  const [mycompany, setmycompany] = useState()
-
-
   const handleInstagram = () => {
-    window.open('https://www.instagram.com/myyathra.in/?hl=en/', '_blank');
-  }
+    const InstagramkUrl = allTrips[0]?.CreatedBy?.Instagram;
+    if (InstagramkUrl) {
+      window.open(InstagramkUrl, '_blank');
+    } else {
+      console.error("Facebook URL not available");
+    }
+  };
 
   const handleFaceBook = () => {
-    window.open('https://www.facebook.com/myyathra.in/', '_blank');
-  }
+    const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook; // Assuming `facebookLink` contains the URL
+    if (facebookUrl) {
+      window.open(facebookUrl, '_blank');
+    } else {
+      console.error("Facebook URL not available");
+    }
+  };
 
   const handleLocation = () => {
     window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank');
@@ -74,37 +82,6 @@ function Landing() {
     return <div>Error: {errors.message || 'Something went wrong'}</div>;
   }
 
-  // Company details
-
-  //   useEffect(() => {
-  //     const fetchcompany = async () => {
-  //         try {
-  //             const companyData = await GetMycompany(userId);
-  //             setmycompany(companyData)
-  //             setLoading(false)
-  //         } catch (error) {
-  //             setErrors(error)
-  //             setLoading(false)
-  //         }
-  //     }
-
-  //     if (userId) {
-  //         fetchcompany();
-  //     } else {
-  //         console.warn('No userId found');
-  //     }
-
-  // }, [userId , navigate])
-
-  // if (loading) {
-  //     return <Loading />;
-  // }
-
-  // if (errors) {
-  //     return <div>Error: {errors.message || 'Something went wrong'}</div>;
-  // }
-
-
   // Carousel settings
   const settings = {
     dots: true,
@@ -132,7 +109,6 @@ function Landing() {
     ]
   };
 
-
   return (
     <div className='landing-page' >
       <LandingNav />
@@ -150,8 +126,6 @@ function Landing() {
           <div class="CompanyMainImg-text-1">Enjoy Your Vacation With Us</div>
           <div class="CompanyMainImg-text-2">I have found out that there ain't no surer way to find out whether you like people or hate them than to travel with them</div>
         </div>
-
-
         {/* Domestic Packages Carousel */}
         <div className="trips-details">
           <h4>Domestic Packages</h4>
@@ -271,14 +245,79 @@ function Landing() {
           </Slider>
         </div>
 
+        {/* Trip carousal and inquiry */}
+       
+
+        <div className="carousal-inquiry d-flex">
+          {/* Left side: Carousel */}
+          <div className="trip-img flex-grow-1">
+            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active">
+                  <img src={companyimg} className="d-block w-100 " alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                <img src={companyimg} className="d-block w-100 " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                  </div>
+                </div>
+                <div className="carousel-item">
+                <img src={companyimg} className="d-block w-100 " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right side: Form or Other Content */}
+          <div className="inquiry-bookTrip flex-grow-1 d-flex justify-content-center align-items-center">
+            <form>
+              <h3>Book Your Trip</h3>
+              <div className="mb-3">
+                <label htmlFor="name" className="form-label">Name</label>
+                <input type="text" className="form-control" id="name" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input type="email" className="form-control" id="email" />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="date" className="form-label">Date</label>
+                <input type="date" className="form-control" id="date" />
+              </div>
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+
+
         {/* about us */}
         <div className='aboutus-landing'>
           <h3>ABOUT US</h3>
-          <div>
-            {/* <p>{company?.About}</p> */}
-            <p>About..........................</p>
-
-          </div>
+          <div>{allTrips[0].CreatedBy.About}</div>
         </div>
 
         {/* bottom nav */}
@@ -286,58 +325,21 @@ function Landing() {
           <div className='bottomlanding-1'>
             <div className='first'>
               <div className='companydetails'>
-                
-                {allTrips[0].CreatedBy.Logo ? (
-                                <img className="logo" src={`${BASE_URL}/UserFiles/${allTrips[0].CreatedBy.Logo }`} />
-                            ) : (<p>No logo available</p>
-                            )}
-
-              <h5><strong>{allTrips[0].CreatedBy.CompanyName}</strong></h5>
+                <img src={logo} alt="" />
+                <h5><strong> {allTrips[0].CreatedBy.CompanyName}</strong></h5>
               </div>
-              {/* <p>{company && company.About
-                            ? company.About.length > 300
-                                ? `${company.About.slice(0, 300)}...`
-                                : company.About
-                            : "Loading or no about text available"}
-                        </p> */}
             </div>
             <div className='Second'>
               <h5><strong>Address :</strong> </h5>
-              {/* <div>
-                 {allTrips.length > 0 && allTrips[0].CreatedBy?.CompanyName ? (
-                <div><strong>{allTrips[0].CreatedBy.CompanyName}</strong></div>
-              ) : (
-                <p>CompanyName not available</p>
-              )}
-              </div> */}
               <h4><strong>{allTrips[0].CreatedBy.CompanyName}</strong></h4>
-              {/* {allTrips.length > 0 && allTrips[0].CreatedBy?.Address ? (
-                <div>{allTrips[0].CreatedBy.Address}</div>
-              ) : (
-                <p>Phone number not available</p>
-              )} */}
-
               <div>{allTrips[0].CreatedBy.Address}</div>
-
             </div>
 
 
             <div className='Third'>
               <h5><strong>Contact :</strong></h5>
               <div>
-                {/* {allTrips.length > 0 && allTrips[0].CreatedBy?.Phonenumber ? (
-                  <div>{allTrips[0].CreatedBy.Phonenumber}</div>
-                ) : (
-                  <p>Phone number not available</p>
-                )} */}
-
                 <div>{allTrips[0].CreatedBy.Phonenumber}</div>
-
-                {/* {allTrips.length > 0 && allTrips[0].CreatedBy?.Email ? (
-                  <div>{allTrips[0].CreatedBy.Email}</div>
-                ) : (
-                  <p>Phone number not available</p>
-                )} */}
                 <div>{allTrips[0].CreatedBy.Email}</div>
               </div>
             </div>
@@ -345,8 +347,8 @@ function Landing() {
 
 
           <div className='bottomlanding-2'>
-            <img src={instagram} alt="linkedin" title='linkedin' onClick={handleInstagram} />
-            <img src={FaceBook} alt="website" title='website' onClick={handleFaceBook} />
+            <img src={instagram} alt="linkedin" title='instagram' onClick={handleInstagram} />
+            <img src={FaceBook} alt="website" title='FaceBook' onClick={handleFaceBook} />
           </div>
 
 

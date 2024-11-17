@@ -20,13 +20,14 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 .scrolling-text {
   display: inline-block;
   padding-left: 100%;
   animation: scroll-text 15s linear infinite;
   font-size: 36px;
   font-family: Cursive;
-  color: #76FF03 ;
+  color: #76FF03;
   font-weight: bold;
 }
 
@@ -41,6 +42,7 @@
   height: 100%;
   background-repeat: no-repeat;
 }
+
 .CompanyMainImg-container {
   position: relative;
   display: inline-block;
@@ -207,6 +209,53 @@
 .slick-dots li button:before {
   color: whitesmoke !important;
 }
+
+/* Trip images and inquiry-bookTrip  */
+.carousal-inquiry {
+  /* height: 300px; */
+  border: 1px solid white;
+  border-radius: 8px;
+  display: flex;
+  height: 550px;
+  padding: 10px;
+}
+
+
+
+.trip-img,
+.inquiry-bookTrip {
+  flex: 1;
+  /* Each takes 50% of the width */
+
+}
+
+.trip-img {
+  padding: 1%;
+  /* background-color: #f8f9fa; Optional: Add a background for clarity */
+}
+
+.inquiry-bookTrip {
+  padding: 20px;
+  background-color: #e9ecef;
+  /* Optional: Different background for the right side */
+}
+
+.carousel-item {
+
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item img {
+  height: 500px;
+  /* Restrict maximum height */
+  border-radius: 9px;
+}
+
+
+
+
+
 
 /* About Us Section */
 .aboutus-landing {
