@@ -246,7 +246,7 @@ function Landing() {
         </div>
 
         {/* Trip carousal and inquiry */}
-       
+
 
         <div className="carousal-inquiry d-flex">
           {/* Left side: Carousel */}
@@ -266,15 +266,15 @@ function Landing() {
                   </div>
                 </div>
                 <div className="carousel-item">
-                <img src={companyimg} className="d-block w-100 " alt="..." />
-                <div className="carousel-caption d-none d-md-block">
+                  <img src={companyimg} className="d-block w-100 " alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
                     <p>Some representative placeholder content for the second slide.</p>
                   </div>
                 </div>
                 <div className="carousel-item">
-                <img src={companyimg} className="d-block w-100 " alt="..." />
-                <div className="carousel-caption d-none d-md-block">
+                  <img src={companyimg} className="d-block w-100 " alt="..." />
+                  <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>Some representative placeholder content for the third slide.</p>
                   </div>
@@ -296,17 +296,34 @@ function Landing() {
             <form>
               <h3>Book Your Trip</h3>
               <div className="mb-3">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input type="text" className="form-control" id="name" />
+                <label htmlFor="name" className="form-label">Name <span className="mandatory-indicator">*</span></label>
+                <input type="text"
+                 className="form-control" 
+                 id="name" 
+                 required
+                 />
               </div>
+
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input type="email" className="form-control" id="email" />
+                <label htmlFor="PhoneNumber" className="form-label">Phone Number <span className="mandatory-indicator">*</span></label>
+                <input type="number" className="form-control" id="PhoneNumber" required />
               </div>
+              
               <div className="mb-3">
+                <label htmlFor="email" className="form-label">Email </label>
+                <input type="email" 
+                className="form-control" 
+                id="email" 
+                
+                />
+              </div>
+
+              
+
+              {/* <div className="mb-3">
                 <label htmlFor="date" className="form-label">Date</label>
                 <input type="date" className="form-control" id="date" />
-              </div>
+              </div> */}
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
           </div>

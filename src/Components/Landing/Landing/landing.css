@@ -321,3 +321,8 @@
   border-radius: 50px;
   margin-bottom: 8px;
 }
+
+.mandatory-indicator {
+  color: red;
+  margin-left: 5px;
+}
