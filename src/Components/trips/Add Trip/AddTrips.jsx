@@ -94,7 +94,6 @@ function Addtrips() {
                   name="TripTitle"
                   placeholder="Trip Title..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -113,7 +112,6 @@ function Addtrips() {
                   name="TripLocations"
                   placeholder="Trip Locations..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -132,7 +130,6 @@ function Addtrips() {
                   name="TripDuration"
                   placeholder="2D / 3N ..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -151,7 +148,6 @@ function Addtrips() {
                   name="Flights"
                   placeholder="Flights..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -170,7 +166,6 @@ function Addtrips() {
                   name="Hotels"
                   placeholder="Hotels..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -189,7 +184,6 @@ function Addtrips() {
                   name="Activities"
                   placeholder="Trip Activities..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -208,7 +202,6 @@ function Addtrips() {
                   name="TripAmount"
                   placeholder="Trip Amount..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -228,7 +221,6 @@ function Addtrips() {
                   name="TripDiscountAmount"
                   placeholder="Trip Discount Amount..."
                   onChange={handleChange}
-                  // value={addJobs.JobTitle}
                   required
                 />
               </div>
@@ -242,7 +234,8 @@ function Addtrips() {
                 </label>
               </div>
               <div className="col-75">
-                <select name="TripType" onChange={handleChange} >
+                <select name="TripType" 
+                onChange={handleChange} >
                   <option value="" disabled selected>
                     Select Trip Type
                   </option>

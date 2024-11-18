@@ -211,13 +211,14 @@
 }
 
 /* Trip images and inquiry-bookTrip  */
+
 .carousal-inquiry {
   /* height: 300px; */
   border: 1px solid white;
   border-radius: 8px;
   display: flex;
   height: 550px;
-  padding: 10px;
+  padding: 25px;
 }
 
 
@@ -230,14 +231,15 @@
 }
 
 .trip-img {
-  padding: 1%;
+  padding-right: 10px;
+  /* padding: 1%; */
   /* background-color: #f8f9fa; Optional: Add a background for clarity */
 }
 
 .inquiry-bookTrip {
-  padding: 20px;
+  padding: 0px;
   background-color: #e9ecef;
-  /* Optional: Different background for the right side */
+  border-radius: 8px;
 }
 
 .carousel-item {
