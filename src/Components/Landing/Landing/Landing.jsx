@@ -247,6 +247,7 @@ function Landing() {
         </div>
 
         {/* Trip carousal and inquiry */}
+        
         <InquiryBooking />
 
         {/* about us */}

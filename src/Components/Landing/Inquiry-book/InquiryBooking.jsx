@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import companyimg from '../../Assets/my-yathra/company-img.jpeg';
 import { BookNow } from '../../../Api/BookNow'
 import { useNavigate } from 'react-router-dom';
+import "./booking.css"
 
 
 function InquiryBooking() {
@@ -9,75 +10,39 @@ function InquiryBooking() {
   const navigate = useNavigate();
 
   const [booknow, setbooknow] = useState({
-    Name: '',
-    Number: '',
-    Email: '',
+    UserName: "",
+    UserPhoneNumber: "",
+    userEmail: "",
   });
 
 
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setbooknow({ ...booknow, [name]: value });
+  const handlebooking = (e) =>{
+    const {name , value} = e.target 
+    setbooknow({...booknow,[name]:value});
   };
 
-  // const handleBookNow = async (e) => {
-  //   e.preventDefault();
-
-  //   // Validate the PhoneNumber field
-  //   if (!booknow.Number) {
-  //     alert("Phone number is required!");
-  //     return;
-  //   }
-
-  //   try {
-  //     const BookNowdata = {
-  //       ...booknow,
-  //       Date: new Date().toISOString(),
-  //     };
-
-  //     await BookNow(BookNowdata);
-  //     alert('Booking successful!');
-  //     navigate('/');
-
-  //   } catch (error) {
-
-  //     console.error("Error updating user:", error);
-  //     alert('An error occurred while adding the trip');
-
-  //   }
-  // }
-
-  const handleBookNow = async (e) => {
+  const handleBookNow = async (e)=> {
     e.preventDefault();
 
-    console.log("Current booknow state:", booknow); // Debugging
-
-    // Validate the PhoneNumber field
-    if (!booknow.Number) {
-      alert("Phone number is required!");
-      return;
-    }
-
     try {
-      const BookNowdata = {
-        ...booknow,
-        Date: new Date().toISOString(),
+      const BookNowdata = {...booknow,
+        Date: new Date().toISOString(), 
       };
-
       await BookNow(BookNowdata);
-      alert('Booking successful!');
-      navigate('/');
-
+      alert('Thank you for choosing MY YATHRA. You will receive a call back shortly');
+      navigate('/')
     } catch (error) {
       console.error("Error updating user:", error);
       alert('An error occurred while adding the trip');
+
     }
-  };
+  }
+
+ 
 
   return (
     <div>
-
       <div className="carousal-inquiry d-flex">
         {/* Left side: Carousel */}
         <div className="trip-img flex-grow-1">
@@ -123,57 +88,55 @@ function InquiryBooking() {
 
         {/* Right side: Form or Other Content */}
         <div className="inquiry-bookTrip flex-grow-1 d-flex justify-content-center align-items-center">
-                     <h3>Book Your Trip</h3>
-
-         
           <form onSubmit={handleBookNow} >
-
+            <h3>Book Your Trip</h3>
 
             <div className="mb-3">
-              <label htmlFor="Name" className="form-label">Name <span className="mandatory-indicator">*</span></label>
+              <label htmlFor="UserName"
+                className="form-label">Name <span className="mandatory-indicator">*</span>
+              </label>
               <input
                 type="text"
-                name="Number"
+                name="UserName"
                 className="form-control"
-                onChange={handleChange}
-                placeholder="Enter your phone number"
+                onChange={handlebooking}
+                placeholder="Enter your Name"
+                required
 
               />
             </div>
 
             <div className="mb-3">
-              <label htmlFor="PhoneNumber"
+              <label htmlFor="UserPhoneNumber"
                 className="form-label">Phone Number <span className="mandatory-indicator">*</span></label>
               <input
-                type="text"
+                type="Number"
                 className="form-control"
-                name='PhoneNumber'
+                name='UserPhoneNumber'
+                onChange={handlebooking}
+                placeholder="Enter your phone number"
                 required
-                onChange={handleChange}
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="Email" className="form-label">Email </label>
+              <label htmlFor="userEmail" className="form-label">Email </label>
               <input
-                type="email"
-                className="form-control"
-                name='Email'
-                onChange={handleChange}
-
+              type="email"
+              className="form-control"
+              name='userEmail'
+              onChange={handlebooking}
+              placeholder="Enter your phone number"
               />
             </div>
-
             <button type="submit" className="btn btn-primary">Submit</button>
           </form>
-
-
         </div>
       </div>
 
-
-
+     
     </div>
   )
 }
 
 export default InquiryBooking
+
