@@ -14,24 +14,25 @@ import Rupee16 from '../../Assets/my-yathra/icons8-rupee-16.png';
 import instagram from '../../Assets/my-yathra/icons8-instagram-35.png'
 import FaceBook from '../../Assets/my-yathra/icons8-facebook-35.png'
 import logo from '../../Assets/my-yathra/logo.jpeg';
-
-
-import { GetTrips, GetMycompany } from '../../../Api/Trips';
+import whatsapp from '../../Assets/my-yathra/icons8-whatsapp-35.png'
+import location from '../../Assets/my-yathra/icons8-location-35 (2).png'
+import { GetTrips } from '../../../Api/Trips';
 import Loading from '../../Loading/Loading';
 import { BASE_URL } from '../../../Constants/BaseUrl';
 import InquiryBooking from '../Inquiry-book/InquiryBooking';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Landing() {
-
-
+  const navigate = useNavigate();
   const [allTrips, setAllTrips] = useState([]);
   const [domesticTrips, setDomesticTrips] = useState([]);
   const [internationalTrips, setInternationalTrips] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errors, setErrors] = useState(null);
 
+  // Instagram
   const handleInstagram = () => {
     const InstagramkUrl = allTrips[0]?.CreatedBy?.Instagram;
     if (InstagramkUrl) {
@@ -41,6 +42,7 @@ function Landing() {
     }
   };
 
+  // FaceBook
   const handleFaceBook = () => {
     const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook; // Assuming `facebookLink` contains the URL
     if (facebookUrl) {
@@ -50,7 +52,21 @@ function Landing() {
     }
   };
 
-  const handleLocation = () => {
+  // whatsapp
+  const handlewhatsapp = () => {
+    const phoneNumber = allTrips[0]?.CreatedBy?.Phonenumber;
+    if (phoneNumber) {
+      const formattedPhoneNumber = phoneNumber.replace(/\s+/g, '');
+      const message = encodeURIComponent("Hello! I am contacting you regarding your trip.");
+      const whatsappUrl = `https://wa.me/${formattedPhoneNumber}?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    } else {
+      console.error("WhatsApp phone number not available");
+    }
+  };
+
+  // Location
+  const handlelocation = () => {
     window.open('https://maps.app.goo.gl/vadmQUGPhzJgrD916/', '_blank');
   }
 
@@ -59,7 +75,6 @@ function Landing() {
   useEffect(() => {
     const fetchTrips = async () => {
       try {
-        debugger
         const tripData = await GetTrips();
         setAllTrips(tripData);
         const domestic = tripData.filter(trip => trip.TripType === 'domestic');
@@ -110,6 +125,9 @@ function Landing() {
     ]
   };
 
+
+
+
   return (
     <div className='landing-page' >
       <LandingNav />
@@ -127,6 +145,7 @@ function Landing() {
           <div class="CompanyMainImg-text-1">Enjoy Your Vacation With Us</div>
           <div class="CompanyMainImg-text-2">I have found out that there ain't no surer way to find out whether you like people or hate them than to travel with them</div>
         </div>
+
         {/* Domestic Packages Carousel */}
         <div className="trips-details">
           <h4>Domestic Packages</h4>
@@ -180,7 +199,7 @@ function Landing() {
                     </div>
                   </div>
 
-                  <button className="button_01">Book Now</button>
+                  {/* <button className="button_01" >Book Now</button> */}
                 </div>
               </div>
             ))}
@@ -239,7 +258,7 @@ function Landing() {
                       <span className="per-person">Per person</span>
                     </div>
                   </div>
-                  <button className="button_01">Book Now</button>
+                  {/* <button className="button_01"  >Book Now</button> */}
                 </div>
               </div>
             ))}
@@ -247,7 +266,6 @@ function Landing() {
         </div>
 
         {/* Trip carousal and inquiry */}
-        
         <InquiryBooking />
 
         {/* about us */}
@@ -283,6 +301,8 @@ function Landing() {
 
 
           <div className='bottomlanding-2'>
+            <img src={location} alt="location" title='Location' onClick={handlelocation} />
+            <img src={whatsapp} alt="linkedin" title='whatsapp ' onClick={handlewhatsapp} />
             <img src={instagram} alt="linkedin" title='instagram' onClick={handleInstagram} />
             <img src={FaceBook} alt="website" title='FaceBook' onClick={handleFaceBook} />
           </div>
@@ -291,7 +311,6 @@ function Landing() {
         </div>
 
       </div>
-
 
     </div>
   );

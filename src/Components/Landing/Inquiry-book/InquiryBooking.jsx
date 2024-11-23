@@ -90,7 +90,6 @@ function InquiryBooking() {
         <div className="inquiry-bookTrip flex-grow-1 d-flex justify-content-center align-items-center">
           <form onSubmit={handleBookNow} >
             <h3>Book Your Trip</h3>
-
             <div className="mb-3">
               <label htmlFor="UserName"
                 className="form-label">Name <span className="mandatory-indicator">*</span>
@@ -102,10 +101,8 @@ function InquiryBooking() {
                 onChange={handlebooking}
                 placeholder="Enter your Name"
                 required
-
               />
             </div>
-
             <div className="mb-3">
               <label htmlFor="UserPhoneNumber"
                 className="form-label">Phone Number <span className="mandatory-indicator">*</span></label>
@@ -125,7 +122,7 @@ function InquiryBooking() {
               className="form-control"
               name='userEmail'
               onChange={handlebooking}
-              placeholder="Enter your phone number"
+              placeholder="Enter your email Id"
               />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
