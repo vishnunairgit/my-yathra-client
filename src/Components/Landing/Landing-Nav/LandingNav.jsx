@@ -40,9 +40,9 @@ function LandingNav() {
   if (loading) {
     return <Loading />;
   }
-  if (errors) {
-    return <div>Error: {errors.message || 'Something went wrong'}</div>;
-  }
+  // if (errors) {
+  //   return <div>Error: {errors.message || 'Something went wrong'}</div>;
+  // }
 
   const handleFaceBook = () => {
     const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook;

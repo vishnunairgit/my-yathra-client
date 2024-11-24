@@ -77,8 +77,8 @@ function Landing() {
       try {
         const tripData = await GetTrips();
         setAllTrips(tripData);
-        const domestic = tripData.filter(trip => trip.TripType === 'domestic');
-        const international = tripData.filter(trip => trip.TripType === 'international');
+        const domestic = tripData?.filter(trip => trip?.TripType === 'domestic');
+        const international = tripData?.filter(trip => trip?.TripType === 'international');
         setDomesticTrips(domestic);
         setInternationalTrips(international);
 
@@ -94,9 +94,9 @@ function Landing() {
   if (loading) {
     return <Loading />;
   }
-  if (errors) {
-    return <div>Error: {errors.message || 'Something went wrong'}</div>;
-  }
+  // if (errors) {
+  //   return <div>Error: {errors.message || 'Something went wrong'}</div>;
+  // }
 
   // Carousel settings
   const settings = {
@@ -151,33 +151,33 @@ function Landing() {
           <h4>Domestic Packages</h4>
           <Slider {...settings}>
             {domesticTrips.map((trip) => (
-              <div key={trip.id} className="trip-card">
+              <div key={trip?.id} className="trip-card">
 
-                <h4>{trip.TripTitle}</h4>
-                {trip.TripFile ? (
-                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip.TripFile.split('\\').pop()}`} alt="trip-image" />
+                <h4>{trip?.TripTitle}</h4>
+                {trip?.TripFile? (
+                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
                 ) : (
                   <p>No logo</p>
                 )}
 
                 <div className="trip-details">
-                  <h4>{trip.TripLocations}</h4>
-                  <p>{trip.TripDuration}</p>
+                  <h4>{trip?.TripLocations}</h4>
+                  <p>{trip?.TripDuration}</p>
 
                   <div className='Trip-data'>
                     <div className='trip-flight'>
                       <img src={Flight} alt="Flights" />
-                      <p> {trip.Flights} Flights </p>
+                      <p> {trip?.Flights} Flights </p>
                     </div>
 
                     <div className='trip-Hotels'>
                       <img src={Hotels} alt="Hotels" />
-                      <p>{trip.Hotels} Hotels</p>
+                      <p>{trip?.Hotels} Hotels</p>
                     </div>
 
                     <div className='trip-activities'>
                       <img src={Activities} alt="Activities" />
-                      <p>{trip.Activities} Activities</p>
+                      <p>{trip?.Activities} Activities</p>
                     </div>
                   </div>
 
@@ -185,7 +185,7 @@ function Landing() {
                     <div className="trip-price-normal">
                       <div className="price-row">
                         <img src={Rupee16} alt="Normal Price" />
-                        <p>{trip.TripAmount}/-</p>
+                        <p>{trip?.TripAmount}/-</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -193,7 +193,7 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>{trip.TripDiscountAmount}/-</p>
+                        <p>{trip?.TripDiscountAmount}/-</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -211,32 +211,32 @@ function Landing() {
           <h4>International Packages</h4>
           <Slider {...settings}>
             {internationalTrips.map((trip) => (
-              <div key={trip.id} className="trip-card">
+              <div key={trip?.id} className="trip-card">
 
                 <h4>{trip.TripTitle}</h4>
-                {trip.TripFile ? (
-                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip.TripFile.split('\\').pop()}`} alt="trip-image" />
+                {trip?.TripFile ? (
+                  <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
                 ) : (
                   <p>No logo</p>
                 )}
                 <div className="trip-details">
-                  <h4>{trip.TripLocations}</h4>
-                  <p>{trip.TripDuration}</p>
+                  <h4>{trip?.TripLocations}</h4>
+                  <p>{trip?.TripDuration}</p>
 
                   <div className='Trip-data'>
                     <div className='trip-flight'>
                       <img src={Flight} alt="Flights" />
-                      <p> {trip.Flights} Flights </p>
+                      <p> {trip?.Flights} Flights </p>
                     </div>
 
                     <div className='trip-Hotels'>
                       <img src={Hotels} alt="Hotels" />
-                      <p>{trip.Hotels} Hotels</p>
+                      <p>{trip?.Hotels} Hotels</p>
                     </div>
 
                     <div className='trip-activities'>
                       <img src={Activities} alt="Activities" />
-                      <p>{trip.Activities} Activities</p>
+                      <p>{trip?.Activities} Activities</p>
                     </div>
 
                   </div>
@@ -245,7 +245,7 @@ function Landing() {
                     <div className="trip-price-normal">
                       <div className="price-row">
                         <img src={Rupee16} alt="Normal Price" />
-                        <p>{trip.TripAmount}/-</p>
+                        <p>{trip?.TripAmount}/-</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -253,7 +253,7 @@ function Landing() {
                     <div className="trip-price-discount">
                       <div className="price-row">
                         <img src={Rupee24} alt="Discounted Price" />
-                        <p>{trip.TripDiscountAmount}/-</p>
+                        <p>{trip?.TripDiscountAmount}/-</p>
                       </div>
                       <span className="per-person">Per person</span>
                     </div>
@@ -271,7 +271,7 @@ function Landing() {
         {/* about us */}
         <div className='aboutus-landing'>
           <h3>ABOUT US</h3>
-          <div>{allTrips[0].CreatedBy.About}</div>
+          <div>{allTrips[0]?.CreatedBy?.About}</div>
         </div>
 
         {/* bottom nav */}
@@ -280,21 +280,21 @@ function Landing() {
             <div className='first'>
               <div className='companydetails'>
                 <img src={logo} alt="" />
-                <h5><strong> {allTrips[0].CreatedBy.CompanyName}</strong></h5>
+                <h5><strong> {allTrips[0]?.CreatedBy?.CompanyName}</strong></h5>
               </div>
             </div>
             <div className='Second'>
               <h5><strong>Address :</strong> </h5>
-              <h4><strong>{allTrips[0].CreatedBy.CompanyName}</strong></h4>
-              <div>{allTrips[0].CreatedBy.Address}</div>
+              <h4><strong>{allTrips[0]?.CreatedBy?.CompanyName}</strong></h4>
+              <div>{allTrips[0]?.CreatedBy?.Address}</div>
             </div>
 
 
             <div className='Third'>
               <h5><strong>Contact :</strong></h5>
               <div>
-                <div>{allTrips[0].CreatedBy.Phonenumber}</div>
-                <div>{allTrips[0].CreatedBy.Email}</div>
+                <div>{allTrips[0]?.CreatedBy?.Phonenumber}</div>
+                <div>{allTrips[0]?.CreatedBy?.Email}</div>
               </div>
             </div>
           </div>
