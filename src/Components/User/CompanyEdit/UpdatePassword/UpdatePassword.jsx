@@ -6,7 +6,7 @@ import pwd from '../../../Assets/AssetsProvider';
 import './updatepassword.css'
 
 function UpdatePassword() {
-  const { userId } = useParams();
+  const { companyId } = useParams();
   const navigate = useNavigate();
 
   const [password, setPassword] = useState({
@@ -78,13 +78,12 @@ function UpdatePassword() {
 
     try {
     //   debugger
-      const response = await UpdateCompanyPassword(userId, password)
+      const response = await UpdateCompanyPassword(companyId, password)
 
       if (response.message === "Password updated successfully") {
         alert('Password updated successfully!');
         setSuccessMessage(response.message);
-        // navigate(`/UserEdit/${userId}`);
-        navigate(`/EditCompany/${userId}`);
+        navigate(`/EditCompany/${companyId}`);
 
         setErrors({});
       } else {
@@ -107,7 +106,7 @@ function UpdatePassword() {
   }
 
   const handleback = () => {
-    navigate(`/UserEdit/${userId}`)
+    navigate(`/UserEdit/${companyId}`)
   }
 
   return (

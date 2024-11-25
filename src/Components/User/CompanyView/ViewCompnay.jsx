@@ -9,7 +9,12 @@ import { BASE_URL } from '../../../Constants/BaseUrl';
 
 function ViewCompnay() {
 
-    const userId = useSelector(state => state.user.userDetails.userId);
+    const companyId = useSelector(state => state.company.companyDetails?.companyId );
+
+    // console.log(companyId,"view company");
+    
+
+
     const [mycompany, setmycompany] = useState()
     const [loading, setloading] = useState(true);
     const [errors, seterrors] = useState(null)
@@ -18,7 +23,7 @@ function ViewCompnay() {
     useEffect(() => {
         const fetchcompany = async () => {
             try {
-                const companyData = await GetMycompany(userId);
+                const companyData = await GetMycompany(companyId);
                 setmycompany(companyData)
                 setloading(false)
             } catch (error) {
@@ -27,15 +32,15 @@ function ViewCompnay() {
             }
         }
 
-        if (userId) {
+        if (companyId) {
             fetchcompany();
         } else {
-            console.warn('No userId found');
-            navigate('/login'); // Redirect to login if userId is missing
+            console.warn('No companyId found');
+            // navigate('/login'); 
 
         }
 
-    }, [userId , navigate])
+    }, [companyId])
 
     if (loading) {
         return <Loading />;
@@ -47,7 +52,7 @@ function ViewCompnay() {
 
 
     const handleEdit = ()=>{
-        navigate(`/EditCompany/${userId}`);
+        navigate(`/EditCompany/${companyId}`);
     }
     
     const handleback = () => {
@@ -62,9 +67,6 @@ function ViewCompnay() {
             <form >
                 <div className="container">
                     <div className="leftSide-container">
-
-
-
                         {/* COMPANY NAME */}
                         <div className="row">
                             <div className="col-25">
@@ -206,17 +208,17 @@ function ViewCompnay() {
                         <div className='files'>
                             <div>
                                 <h4>Logo</h4>
-                                {mycompany.Logo ? (
-                      <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.Logo}`}  />
+                                {mycompany.logoFile ? (
+                      <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`}  />
                     ) : (
                       <p>No logo available</p>
                     )}
                             </div>
                             <div>
                                 <h4>Image</h4>
-                                {mycompany?.Image ? (
+                                {mycompany?.imageFile ? (
     
-                      <img className="image" src={`${BASE_URL}/UserFiles/${mycompany?.Image}`} alt="Image" />
+                      <img className="image" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} alt="Image" />
                     ) : (
                       <p>No image available</p>
                     )}

@@ -226,7 +226,6 @@ function Signup({ setloginsignup }) {
                             type="password"
                             value={signUpForm.password}
                             name="password"
-                            // onChange={handleChange}
                             onChange={handlePasswordChange}
                             onFocus={handlePasswordFocus}
                             onBlur={handlePasswordBlur}

@@ -7,7 +7,7 @@ import Loading from '../../Loading/Loading';
 
 
 function EditCompany() {
-    const { userId } = useParams();
+    const { companyId } = useParams();
     const navigate = useNavigate();
 
     
@@ -25,7 +25,7 @@ function EditCompany() {
     useEffect(() => {
         const fetchcompany = async () => {
             try {
-                const Data = await GetMycompany(userId);
+                const Data = await GetMycompany(companyId);
                 setcompany(Data)
                 setcompanyData(Data)
                 setloading(false)
@@ -35,15 +35,15 @@ function EditCompany() {
             }
         }
 
-        if (userId) {
+        if (companyId) {
             fetchcompany();
         } else {
-            console.warn('No userId found');
-            navigate('/login'); // Redirect to login if userId is missing
+            console.warn('No companyId found');
+            // navigate('/login'); // Redirect to login if companyId is missing
 
         }
 
-    }, [userId , navigate])
+    }, [companyId , navigate])
 
     if (loading) {
         return <Loading />;
@@ -80,7 +80,7 @@ function EditCompany() {
                 formData.append('imageFile', CompanyFiles.imageFile);
             }
 
-            await UpdateCompany(userId, formData);
+            await UpdateCompany(companyId, formData);
             alert('User updated successfully!');
             navigate('/ViewCompnay');
         } catch (error) {
@@ -90,7 +90,7 @@ function EditCompany() {
     };
 
     const updatePassword = () => {
-        navigate(`/EditCompany/${userId}/UpdatePassword`);
+        navigate(`/EditCompany/${companyId}/UpdatePassword`);
     };
 
     const handleBack = () => {

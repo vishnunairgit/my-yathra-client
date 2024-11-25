@@ -1,8 +1,6 @@
 
 import AxiosInstance from "../Config/AxiosInstance";
 
-
-
 export const register = async (userData) => {
     try {
         const response = await AxiosInstance.post('/register', userData);

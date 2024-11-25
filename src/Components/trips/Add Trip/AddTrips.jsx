@@ -9,8 +9,9 @@ import { useSelector } from 'react-redux';
 
 function Addtrips() {
   const navigate = useNavigate();
-  const userId = useSelector(state => state.user.userDetails.userId);
-  console.log(userId, '-----------------------userId------------------');
+  const companyId = useSelector(state => state.company.companyDetails.companyId);
+
+  console.log(companyId, '-----------------------companyId------------------');
 
   const [trip, setTrip] = useState({
     TripTitle: "",
@@ -46,7 +47,7 @@ function Addtrips() {
       const formData = new FormData();
 
       formData.append('Date', new Date().toISOString());
-      formData.append('CreatedBy', userId);  // Make sure `userId` is a single string, not an array.
+      formData.append('CreatedBy', companyId); 
 
       for (const key in trip) {
         formData.append(key, trip[key]);

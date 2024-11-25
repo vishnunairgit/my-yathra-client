@@ -38,9 +38,9 @@ function UpdateTrip() {
         return <Loading />;
     }
 
-    if (error) {
-        return <div>Error: {error.message || 'Something went wrong'}</div>;
-    }
+    // if (error) {
+    //     return <div>Error: {error.message || 'Something went wrong'}</div>;
+    // }
 
     const handleChange = (e) => {
         const { name, value } = e.target

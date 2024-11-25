@@ -10,6 +10,7 @@ import ViewCompnay from '../../User/CompanyView/ViewCompnay';
 import EditCompany from '../../User/CompanyEdit/EditCompany';
 import UpdatePassword from '../../User/CompanyEdit/UpdatePassword/UpdatePassword';
 import UpdateTrip from '../../trips/Update Trip/UpdateTrip';
+import Notifications from '../../Notifications/Notifications';
 
 function Home() {
   return (
@@ -21,24 +22,14 @@ function Home() {
             < Route path='/Home' element={< Mycompany />} />
             < Route path='/AddTrips' element={< AddTrips />} />
             < Route path='/AllTrip' element={< AllTrip />} />
-            <Route path="/UpdateTrip/:tripId" element={<UpdateTrip />} />
-
-
-
+            < Route path='/UpdateTrip/:tripId' element={<UpdateTrip />} />
             < Route path='/ViewCompnay' element={< ViewCompnay />} />
-            < Route path='/EditCompany/:userId' element={<EditCompany />} />
-            < Route path='/EditCompany/:userId/Updatepassword' element={< UpdatePassword />} />
-
-
-            {/* < Route path='/EditJob/:jobId' element={< EditJob />} /> */}
-            {/* < Route path='/UserView' element={<UserView />} /> */}
+            < Route path='/EditCompany/:companyId' element={< EditCompany />} />
+            < Route path='/EditCompany/:companyId/Updatepassword' element={< UpdatePassword />} />
             < Route path='/Mycompany' element={<Mycompany />} />
-            {/* < Route path='/UserEdit/:userId' element={<UserEdit />} /> */}
-            {/* < Route path='/UserEdit/:userId/Updatepassword' element={< Updatepassword />} /> */}
-            {/* < Route path='/Notifications' element={< Notifications />} /> */}
+            < Route path='/Notifications' element={<Notifications />} />
 
-
-          </Route  >
+          </Route >
         </Routes>
       </div>
     </div>
@@ -46,3 +37,6 @@ function Home() {
 }
 
 export default Home
+
+
+// Notifications

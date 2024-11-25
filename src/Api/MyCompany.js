@@ -1,12 +1,12 @@
 import AxiosInstance from "../Config/AxiosInstance";
 
 
-export const GetMycompany = async (userId) => {
+export const GetMycompany = async (companyId) => {
     try {
         const response = await AxiosInstance.get('/GetMycompany',
             {
                 headers: {
-                    'UserId': userId
+                    'companyId': companyId
                 }
             });
         return response.data;
@@ -17,9 +17,9 @@ export const GetMycompany = async (userId) => {
 };
 
 
-export const UpdateCompany = async (userId, formData) => {
+export const UpdateCompany = async (companyId, formData) => {
     try {
-        const response = await AxiosInstance.put(`/UpdateCompany/${userId}`, formData, {
+        const response = await AxiosInstance.put(`/UpdateCompany/${companyId}`, formData, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -32,27 +32,9 @@ export const UpdateCompany = async (userId, formData) => {
     }
 };
 
-
-// export const UpdateCompany = async (userId, formData) => {
-//     try {
-//         const response = await AxiosInstance.put(`/UpdateCompany/${userId}`, formData,
-//             {
-//                 headers: {
-//                     'Content-Type': 'multipart/form-data'
-//                 }
-//             });
-        
-//         return response.data;
-//     } catch (error) {
-//         console.error("Error updating user:", error);
-//         throw error;
-//     }
-// };
-
-
-export const UpdateCompanyPassword = async (userId, userData) => {
+export const UpdateCompanyPassword = async (companyId, userData) => {
     try {
-        const response = await AxiosInstance.put(`/UpdateCompanyPassword/${userId}`, userData);
+        const response = await AxiosInstance.put(`/UpdateCompanyPassword/${companyId}`, userData);
         return response.data;
     } catch (error) {
         console.error("Error updating user:", error);

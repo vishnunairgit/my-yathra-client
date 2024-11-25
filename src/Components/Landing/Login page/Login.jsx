@@ -7,7 +7,7 @@ import pwd from "../../Assets/AssetsProvider";
 import './login.css';
 import { login } from '../../../Api/Landing';
 import { useDispatch } from 'react-redux';
-import { setUserDetails, setUserId } from '../../ToolKit/userSlice';
+import { updateCompanyDetails, setCompanyId } from '../../ToolKit/companySlice';
 
 function Login({ setloginsignup }) {
   const [loginForm, setLoginForm] = useState({
@@ -40,10 +40,10 @@ function Login({ setloginsignup }) {
         setErrors('');
         localStorage.setItem('token', response.token);
         const parsedToken = parseJwt(response.token);
-        localStorage.setItem('user', JSON.stringify(parsedToken)); 
+        localStorage.setItem('company', JSON.stringify(parsedToken)); 
         // Dispatch action to update Redux state
-        dispatch(setUserDetails(parsedToken));
-        navigate('/home');
+        dispatch(updateCompanyDetails(parsedToken));
+        navigate('/Home');
       } else {
         setErrors("Login failed. Please try again.");
         setSuccess('');

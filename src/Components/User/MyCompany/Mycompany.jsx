@@ -12,7 +12,12 @@ import { GetMycompany } from '../../../Api/MyCompany'
 import { useSelector } from 'react-redux';
 
 function Mycompany() {
-    const userId = useSelector(state => state.user.userDetails.userId);
+
+
+    // const companyId = useSelector(state => state.company.companyDetails.companyId);
+    const companyId = useSelector(state => state.company.companyDetails?.companyId );
+    // console.log(companyId,"-----------companyId-------- ");
+    
 
     const [mycompany, setmycompany] = useState()
     const [loading, setloading] = useState(true);
@@ -23,7 +28,7 @@ function Mycompany() {
     useEffect(() => {
         const fetchcompany = async () => {
             try {
-                const companyData = await GetMycompany(userId);
+                const companyData = await GetMycompany(companyId);
                 setmycompany(companyData)
                 setloading(false)
             } catch (error) {
@@ -32,15 +37,15 @@ function Mycompany() {
             }
         }
 
-        if (userId) {
+        if (companyId) {
             fetchcompany();
         } else {
-            console.warn('No userId found');
-            navigate('/login'); // Redirect to login if userId is missing
+            console.warn('No companyId found');
+            navigate('/login'); 
 
         }
 
-    }, [userId , navigate])
+    }, [companyId, navigate ])
 
     if (loading) {
         return <Loading />;
@@ -63,8 +68,8 @@ function Mycompany() {
         <div className='MYcompany'>
 
             <div className='mainImg'>
-                {mycompany?.Image ? (
-                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.Image}`} />
+                {mycompany?.imageFile ? (
+                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} />
                 ) : (<p>No image available</p>
                 )}
             </div>
@@ -78,16 +83,16 @@ function Mycompany() {
                 <div className='bottomNav-2'>
                     <div className='first'>
                         <div className='companydetails'>
-                            {mycompany?.Logo ? (
-                                <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.Logo}`} />
+                            {mycompany?.logoFile ? (
+                                <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`} />
                             ) : (<p>No logo available</p>
                             )}
                             <h5><strong>{mycompany?.CompanyName} </strong></h5>
                         </div>
                         <p>{mycompany && mycompany.About
-                            ? mycompany.About.length > 300
-                                ? `${mycompany.About.slice(0, 300)}...`
-                                : mycompany.About
+                            ? mycompany?.About?.length > 300
+                                ? `${mycompany?.About?.slice(0, 300)}...`
+                                : mycompany?.About
                             : "Loading or no about text available"}
                         </p>
                     </div>

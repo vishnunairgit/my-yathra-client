@@ -39,8 +39,6 @@ function InquiryBooking() {
     }
   }
 
- 
-
   return (
     <div>
       <div className="carousal-inquiry d-flex">
@@ -107,7 +105,7 @@ function InquiryBooking() {
               <label htmlFor="UserPhoneNumber"
                 className="form-label">Phone Number <span className="mandatory-indicator">*</span></label>
               <input
-                type="Number"
+                type="text"
                 className="form-control"
                 name='UserPhoneNumber'
                 onChange={handlebooking}

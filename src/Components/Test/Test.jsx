@@ -9,10 +9,9 @@ import { useSelector } from 'react-redux';
 function AddTrips() {
   const navigate = useNavigate();
 
-  // const [userId, setUserId] = useState(localStorage.getItem('userId') || ''); 
-  const userId = useSelector(state => state.user.userDetails.userId);
+  const companyId = useSelector(state => state.company.companyDetails.companyId);
 
-  // console.log(userId,'-------userId----------');
+  // console.log(companyId,'-------companyId----------');
 
   const [addTrips, setaddTrips] = useState({
     CreatedBy: "",
@@ -35,10 +34,8 @@ function AddTrips() {
   const handleaddTripPost = async (e)=>{
     e.preventDefault();
 
-    // const userId = useSelector(state => state.user.userDetails.userId);
-
     try {
-      const addJobData = {...addTrips, CreatedBy:userId,      
+      const addJobData = {...addTrips, CreatedBy:companyId,      
          Date: new Date().toISOString(), 
       };
       const response = await Addjob(addJobData);
