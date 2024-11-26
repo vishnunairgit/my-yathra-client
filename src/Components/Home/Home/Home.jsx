@@ -11,6 +11,7 @@ import EditCompany from '../../User/CompanyEdit/EditCompany';
 import UpdatePassword from '../../User/CompanyEdit/UpdatePassword/UpdatePassword';
 import UpdateTrip from '../../trips/Update Trip/UpdateTrip';
 import Notifications from '../../Notifications/Notifications';
+import UploadTripImages from '../../uploadTripImages/UploadTripImages';
 
 function Home() {
   return (
@@ -28,6 +29,8 @@ function Home() {
             < Route path='/EditCompany/:companyId/Updatepassword' element={< UpdatePassword />} />
             < Route path='/Mycompany' element={<Mycompany />} />
             < Route path='/Notifications' element={<Notifications />} />
+            < Route path='/UploadTripImages' element={<UploadTripImages />} />
+
 
           </Route >
         </Routes>
@@ -39,4 +42,6 @@ function Home() {
 export default Home
 
 
-// Notifications
+
+
+// UploadTripImages
