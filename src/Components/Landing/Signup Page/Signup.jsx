@@ -34,21 +34,6 @@ function Signup({ setloginsignup }) {
         let formErrors = {};
         let valid = true;
 
-        // if (signUpForm.UserName.length < 1) {
-        //     formErrors.UserName = "Please Enter The UserName";
-        //     valid = false;
-        // }
-
-        // if (signUpForm.CompanyName.length < 2) {
-        //     formErrors.CompanyName = "Please Enter The CompanyName ";
-        //     valid = false;
-        // }
-
-        // if (signUpForm.RegistrationNumber.length < 15) {
-        //     formErrors.RegistrationNumber = "Please Enter The RegistrationNumber ";
-        //     valid = false;
-        // }
-
         if (signUpForm.Phonenumber.length < 8) {
             formErrors.Phonenumber = "Please Enter PhoneNumber ";
             valid = false;
@@ -84,9 +69,6 @@ function Signup({ setloginsignup }) {
         }
 
         const userData = {
-            // UserName: signUpForm.UserName,
-            // CompanyName: signUpForm.CompanyName,
-            // RegistrationNumber: signUpForm.RegistrationNumber,
             Email: signUpForm.Email,
             Phonenumber: signUpForm.Phonenumber,
             password: signUpForm.password,
@@ -148,49 +130,6 @@ function Signup({ setloginsignup }) {
             <div className="signup-form">
                 <h2>New Account</h2>
                 <form onSubmit={handleSubmit}>
-
-                    {/* User Name */}
-                    {/* <div className="form-group">
-                        <label>User Name <span className='required_symbol'>*</span></label>
-                        <input
-                            type="text"
-                            value={signUpForm.UserName}
-                            name="UserName"
-                            onChange={handleChange}
-                            placeholder="UserName..."
-                        />
-                        {errors.CompanyName && <p className="error">{errors.CompanyName}</p>}
-                    </div> */}
-
-                    {/* Company Name */}
-                    {/* <div className="form-group">
-                        <label>Company Name <span className='required_symbol'>*</span></label>
-                        <input
-                            type="text"
-                            value={signUpForm.CompanyName}
-                            name="CompanyName"
-                            onChange={handleChange}
-                            placeholder="CompanyName..."
-                        />
-                        {errors.CompanyName && <p className="error">{errors.CompanyName}</p>}
-                    </div> */}
-
-                     {/* onChange={(e) => setSignUpForm({ ...signUpForm, [e.target.name]: e.target.value })} */}
-
-
-
-                    {/* Registration Number */}
-                    {/* <div className="form-group">
-                        <label>registration Number <span className='required_symbol'>*</span></label>
-                        <input
-                            type="text"
-                            value={signUpForm.RegistrationNumber}
-                            name="RegistrationNumber"
-                            onChange={handleChange}
-                            placeholder="Registration Number..."
-                        />
-                        {errors.RegistrationNumber && <p className="error">{errors.RegistrationNumber}</p>}
-                    </div> */}
 
                     {/* Email */}
                     <div className="form-group">

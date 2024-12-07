@@ -2,8 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Landing from './Components/Landing/Landing/Landing';
 import Home from './Components/Home/Home/Home';
-// import { useEffect } from 'react';
-// import io from 'socket.io-client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EmployerLogin from './Components/Landing/Employer Login/EmployerLogin';
 import About from './Components/Landing/About/About';
@@ -29,8 +27,6 @@ function App() {
             <Route path='/BookNow' element={< BookNow />} />
             <Route path='/Otherfacilities'  element={<Otherfacilities/>}  />
             <Route path='Contact' element={< Contact/>}  />
-
-            {/* <Route path="/student/*" element={<StuHome />} /> */}
 
           </Route>
         </Routes>

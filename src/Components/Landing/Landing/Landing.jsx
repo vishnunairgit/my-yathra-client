@@ -44,7 +44,7 @@ function Landing() {
 
   // FaceBook
   const handleFaceBook = () => {
-    const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook; // Assuming `facebookLink` contains the URL
+    const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook; 
     if (facebookUrl) {
       window.open(facebookUrl, '_blank');
     } else {
