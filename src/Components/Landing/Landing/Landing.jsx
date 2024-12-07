@@ -199,7 +199,7 @@ function Landing() {
                     </div>
                   </div>
 
-                  {/* <button className="button_01" >Book Now</button> */}
+                  <button className="button_01" onClick={handlewhatsapp} >Book Now</button>
                 </div>
               </div>
             ))}
@@ -258,7 +258,7 @@ function Landing() {
                       <span className="per-person">Per person</span>
                     </div>
                   </div>
-                  {/* <button className="button_01"  >Book Now</button> */}
+                  <button className="button_01" onClick={handlewhatsapp} >Book Now</button>
                 </div>
               </div>
             ))}
