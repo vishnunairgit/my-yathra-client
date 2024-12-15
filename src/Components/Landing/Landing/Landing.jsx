@@ -44,7 +44,7 @@ function Landing() {
 
   // FaceBook
   const handleFaceBook = () => {
-    const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook; 
+    const facebookUrl = allTrips[0]?.CreatedBy?.FaceBook;
     if (facebookUrl) {
       window.open(facebookUrl, '_blank');
     } else {
@@ -137,7 +137,6 @@ function Landing() {
       </div>
 
       <div className='Trip-main'>
-
         {/* company Image and text */}
         <div class="CompanyMainImg-container">
           <img src={companyimg} alt="Image Description" class="CompanyMainImg-image" />
@@ -148,20 +147,20 @@ function Landing() {
 
         {/* Domestic Packages Carousel */}
         <div className="trips-details">
-          <h4>Domestic Packages</h4>
+          <h5>Domestic Packages</h5>
           <Slider {...settings}>
             {domesticTrips.map((trip) => (
               <div key={trip?.id} className="trip-card">
 
-                <h4>{trip?.TripTitle}</h4>
-                {trip?.TripFile? (
+                <h5>{trip?.TripTitle}</h5>
+                {trip?.TripFile ? (
                   <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
                 ) : (
                   <p>No logo</p>
                 )}
 
                 <div className="trip-details">
-                  <h4>{trip?.TripLocations}</h4>
+                  <h5>{trip?.TripLocations}</h5>
                   <p>{trip?.TripDuration}</p>
 
                   <div className='Trip-data'>
@@ -207,20 +206,21 @@ function Landing() {
         </div>
 
         {/* International Packages Carousel */}
+        
         <div className="trips-details">
-          <h4>International Packages</h4>
+          <h5>International Packages</h5>
           <Slider {...settings}>
             {internationalTrips.map((trip) => (
               <div key={trip?.id} className="trip-card">
 
-                <h4>{trip.TripTitle}</h4>
+                <h5>{trip.TripTitle}</h5>
                 {trip?.TripFile ? (
                   <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
                 ) : (
                   <p>No logo</p>
                 )}
                 <div className="trip-details">
-                  <h4>{trip?.TripLocations}</h4>
+                  <h5>{trip?.TripLocations}</h5>
                   <p>{trip?.TripDuration}</p>
 
                   <div className='Trip-data'>

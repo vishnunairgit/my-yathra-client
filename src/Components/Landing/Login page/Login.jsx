@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../Assets/net.america.png';
+import logo from '../../Assets/my-yathra/logo.jpeg';
 import pwd from "../../Assets/AssetsProvider";
 import './login.css';
 import { login } from '../../../Api/Landing';

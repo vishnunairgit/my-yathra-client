@@ -6,9 +6,6 @@ import './signup.css';
 function Signup({ setloginsignup }) {
 
     const [signUpForm, setSignUpForm] = useState({
-        // UserName: '',
-        // CompanyName: '',
-        // RegistrationNumber: '',
         Phonenumber: '',
         Email: '',
         password: '',

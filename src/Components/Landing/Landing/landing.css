@@ -1,6 +1,42 @@
+.landing-page {
+  background: linear-gradient(to bottom, #000000, #333333);
+}
+
+/* Scrolling Text Container */
+.scrolling-text-container {
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scrolling Text with Animation */
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-text 12s linear infinite, glow-text 2s ease-in-out infinite alternate;
+  font-size: 42px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(90deg, #FFAA00, #FF4081, #00E676, #00D4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.scrolling-text:hover {
+  animation: glow-text 1.5s ease-in-out infinite alternate, scroll-text 10s linear infinite;
+}
+
+
+/* Keyframes for Scrolling Animation */
 @keyframes scroll-text {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
 
   100% {
@@ -8,32 +44,25 @@
   }
 }
 
+/* Keyframes for Glow Effect */
+@keyframes glow-text {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+      0 0 16px rgba(255, 170, 0, 0.8),
+      0 0 24px rgba(255, 64, 129, 0.6);
+  }
 
-.landing-page {
-  background: linear-gradient(to bottom, #000000, #333333);
-}
-
-/* scrolling-text */
-.scrolling-text-container {
-  width: 100%;
-  padding: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.scrolling-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scroll-text 15s linear infinite;
-  font-size: 36px;
-  font-family: Cursive;
-  color: #76FF03;
-  font-weight: bold;
+  100% {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6),
+      0 0 20px rgba(0, 212, 255, 1),
+      0 0 30px rgba(0, 230, 118, 0.8);
+  }
 }
 
 .Trip-main {
   padding: 35px;
 }
+
 
 /* landing-background */
 .landing-background {
@@ -51,7 +80,7 @@
 
 .CompanyMainImg-container img {
   width: 100%;
-  height: 550px;
+  height: 650px;
   border-radius: 10px;
 }
 
@@ -101,9 +130,8 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.trips-details h4 {
+.trips-details h5 {
   text-align: center;
-  /* font-size: 1.8rem; */
   color: gold;
   margin: 10px 0 10px 0;
 }
@@ -243,7 +271,6 @@
 }
 
 .carousel-item {
-
   align-items: center;
   justify-content: center;
 }
@@ -278,6 +305,7 @@
   text-align: justify;
 }
 
+
 /* Bottom Landing */
 .bottomlanding {
   background-color: transparent;
@@ -292,6 +320,7 @@
 .bottomlanding-2 img {
   cursor: pointer;
   margin-right: 10px;
+  width: 30px;
 }
 
 .bottomlanding-1 {

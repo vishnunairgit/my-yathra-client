@@ -1,33 +1,31 @@
 import React, { useState } from 'react'
-import companyimg from '../../Assets/my-yathra/company-img.jpeg';
+import img1 from '../../Assets/my-yathra/WhatsApp Image 2024-12-15 at 22.46.46 (1).jpeg'
+import img2 from '../../Assets/my-yathra/WhatsApp Image 2024-12-15 at 22.46.46.jpeg'
+import img3 from '../../Assets/my-yathra/WhatsApp Image 2024-12-15 at 22.46.47 (1).jpeg'
 import { BookNow } from '../../../Api/BookNow'
 import { useNavigate } from 'react-router-dom';
 import "./booking.css"
 
-
 function InquiryBooking() {
-
   const navigate = useNavigate();
-
   const [booknow, setbooknow] = useState({
     UserName: "",
     UserPhoneNumber: "",
     userEmail: "",
   });
 
-
-
-  const handlebooking = (e) =>{
-    const {name , value} = e.target 
-    setbooknow({...booknow,[name]:value});
+  const handlebooking = (e) => {
+    const { name, value } = e.target
+    setbooknow({ ...booknow, [name]: value });
   };
 
-  const handleBookNow = async (e)=> {
+  const handleBookNow = async (e) => {
     e.preventDefault();
 
     try {
-      const BookNowdata = {...booknow,
-        Date: new Date().toISOString(), 
+      const BookNowdata = {
+        ...booknow,
+        Date: new Date().toISOString(),
       };
       await BookNow(BookNowdata);
       alert('Thank you for choosing MY YATHRA. You will receive a call back shortly');
@@ -50,29 +48,65 @@ function InquiryBooking() {
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            {/* <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src={img1} className="d-block w-100 " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                  <h5>Vibrant Nightlife</h5>
+                  <p>
+                    Feel the pulse of Pattaya’s electric nightlife, filled with music, lights, and excitement.
+                  </p>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img src={img2} className="d-block w-100 " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                  <h5>Cultural Wonders</h5>
+                  <p>
+                    Discover Pattaya’s cultural gems like the breathtaking Sanctuary of Truth and floating markets.
+                  </p>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img src={img3} className="d-block w-100 " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                  <h5>Serene Beaches</h5>
+                  <p>
+                    Unwind by Pattaya’s stunning beaches with crystal-clear waters and golden sands.
+                  </p>
+                </div>
+              </div>
+            </div> */}
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={companyimg} className="d-block w-100 " alt="..." />
+                <img src={img1} className="d-block w-100" alt="Vibrant Nightlife" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
+                  <h5>Vibrant Nightlife</h5>
+                  <p>
+                    Feel the pulse of Pattaya’s electric nightlife, filled with music, lights, and excitement.
+                  </p>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={companyimg} className="d-block w-100 " alt="..." />
+                <img src={img2} className="d-block w-100" alt="Cultural Wonders" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
+                  <h5>Cultural Wonders</h5>
+                  <p>
+                    Discover Pattaya’s cultural gems like the breathtaking Sanctuary of Truth and floating markets.
+                  </p>
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={companyimg} className="d-block w-100 " alt="..." />
+                <img src={img3} className="d-block w-100" alt="Serene Beaches" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
+                  <h5>Serene Beaches</h5>
+                  <p>
+                    Unwind by Pattaya’s stunning beaches with crystal-clear waters and golden sands.
+                  </p>
                 </div>
               </div>
             </div>
+
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
               <span className="visually-hidden">Previous</span>
@@ -116,11 +150,11 @@ function InquiryBooking() {
             <div className="mb-3">
               <label htmlFor="userEmail" className="form-label">Email </label>
               <input
-              type="email"
-              className="form-control"
-              name='userEmail'
-              onChange={handlebooking}
-              placeholder="Enter your email Id"
+                type="email"
+                className="form-control"
+                name='userEmail'
+                onChange={handlebooking}
+                placeholder="Enter your email Id"
               />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
@@ -128,7 +162,7 @@ function InquiryBooking() {
         </div>
       </div>
 
-     
+
     </div>
   )
 }
