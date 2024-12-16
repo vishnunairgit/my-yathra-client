@@ -75,9 +75,7 @@ function Navbar() {
         return <Loading />;
     }
 
-    if (error) {
-        return <div>Error: {error.message || 'Something went wrong'}</div>;
-    }
+   
 
     return (
         <div className="navbarHome">

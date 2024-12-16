@@ -88,37 +88,11 @@ body {
 .login .pwd-img {
   position: absolute;
   right: 10px;
-  /* top:100%; */
   transform: translateY(-50%);
   cursor: pointer;
-  width: 24px; /* Set a fixed width for better control */
+  width: 24px; 
 }
 
-/* .login .button_01,
-.login .button_02 {
-  width: 100%;
-  padding: 0.75em;
-  margin-top: 1em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.login .button_01 {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.login .button_01:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.login .button_02 {
-  background-color: #28a745;
-  color: #fff;
-} */
 
 .login .signup-link {
   text-align: center;

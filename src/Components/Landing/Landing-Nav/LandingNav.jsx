@@ -36,10 +36,7 @@ function LandingNav() {
     return <Loading />;
   }
 
-  if (errors) {
-    console.error(errors);
-    // Optionally display an error message to the user
-  }
+
 
   // Utility function to safely access properties
   const getTripProperty = (key) => allTrips[0]?.CreatedBy?.[key] ?? null;

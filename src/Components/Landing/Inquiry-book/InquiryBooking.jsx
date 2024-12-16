@@ -48,35 +48,7 @@ function InquiryBooking() {
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            {/* <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={img1} className="d-block w-100 " alt="..." />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Vibrant Nightlife</h5>
-                  <p>
-                    Feel the pulse of Pattaya’s electric nightlife, filled with music, lights, and excitement.
-                  </p>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img src={img2} className="d-block w-100 " alt="..." />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Cultural Wonders</h5>
-                  <p>
-                    Discover Pattaya’s cultural gems like the breathtaking Sanctuary of Truth and floating markets.
-                  </p>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img src={img3} className="d-block w-100 " alt="..." />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Serene Beaches</h5>
-                  <p>
-                    Unwind by Pattaya’s stunning beaches with crystal-clear waters and golden sands.
-                  </p>
-                </div>
-              </div>
-            </div> */}
+
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <img src={img1} className="d-block w-100" alt="Vibrant Nightlife" />
