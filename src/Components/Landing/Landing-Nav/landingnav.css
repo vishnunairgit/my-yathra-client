@@ -49,7 +49,6 @@
 
 
 
-/* Dropdown button styling */
 
 .landing-nav .dropdown {
     padding-left: 40px;
@@ -65,7 +64,6 @@
     height: auto;
 }
 
-/* Dropdown menu styling */
 .landing-nav .dropdown-menu li {
     padding-top: 10px;
     min-width: 200px;
@@ -81,3 +79,113 @@
     background-color: #f5f5f5;
     color: #2980b9;
 }
+
+
+
+
+/*  */
+
+
+/* General styles for responsiveness */
+.carousal-inquiry {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Add spacing between elements */
+    margin: 20px;
+  }
+  
+  .trip-img,
+  .inquiry-bookTrip {
+    flex: 1 1 50%; /* Allow flexibility with equal proportions */
+    max-width: 50%; /* Set maximum width */
+    box-sizing: border-box;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    height: auto;
+    width: 100%;
+  }
+  
+  .inquiry-bookTrip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .inquiry-bookTrip form {
+    width: 100%; /* Full width for form */
+    max-width: 400px; /* Restrict form width */
+  }
+  
+  form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .mandatory-indicator {
+    color: red;
+  }
+  
+  form .form-control {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Media queries for smaller screens */
+  @media (max-width: 768px) {
+    .carousal-inquiry {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+  
+    .trip-img,
+    .inquiry-bookTrip {
+      flex: 1 1 100%; /* Full width for each section */
+      max-width: 100%; /* Remove max-width restrictions */
+    }
+  
+    form {
+      max-width: 90%; /* Reduce form width for small screens */
+    }
+  
+    .carousel-caption h5 {
+      font-size: 18px; /* Adjust heading size */
+    }
+  
+    .carousel-caption p {
+      font-size: 14px; /* Adjust paragraph size */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    form h3 {
+      font-size: 20px; /* Adjust heading size for smaller screens */
+    }
+  
+    .carousel-caption h5 {
+      font-size: 16px; /* Further reduce heading size */
+    }
+  
+    .carousel-caption p {
+      font-size: 12px; /* Further reduce paragraph size */
+    }
+  }
+  

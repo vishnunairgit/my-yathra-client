@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 .landing-page {
   background: linear-gradient(to bottom, #000000, #333333);
 }
@@ -234,8 +244,11 @@
 }
 
 /* No off trip button */
+
+
 .slick-dots li button:before {
   color: whitesmoke !important;
+  
 }
 
 /* Trip images and inquiry-bookTrip  */
@@ -247,6 +260,7 @@
   display: flex;
   height: 550px;
   padding: 25px;
+  margin: 10px;
 }
 
 
@@ -357,3 +371,70 @@
   color: red;
   margin-left: 5px;
 }
+
+
+/* 
+
+*/
+
+/* General Styling */
+
+/* Responsive Images */
+
+
+
+/* Grid Adjustments for Trips */
+
+
+/* About Us Section */
+
+
+/* Carousel Adjustments */
+
+
+
+
+/* Bottom Section */
+
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  /* Medium screens */
+  .scrolling-text {
+    font-size: 36px;
+  }
+
+  .aboutus-landing {
+    padding: 40px 80px;
+  }
+
+  .bottomlanding-1 {
+    grid-template-columns: 2fr 1.5fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Large screens */
+  .scrolling-text {
+    font-size: 42px;
+  }
+
+  .aboutus-landing {
+    padding: 50px 150px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
