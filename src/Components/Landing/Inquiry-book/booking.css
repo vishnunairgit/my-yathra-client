@@ -1,133 +1,138 @@
-/* .carousel-caption {
-  position: absolute;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.5);
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mandatory-indicator {
+  color: red;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
   padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Carousel and Form Container */
+.booking-inquiry {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Ensures equal height columns */
+  padding: 20px;
+}
+
+.trip-img,
+.inquiry-bookTrip {
+  flex: 1;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Carousel Styles */
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
   border-radius: 8px;
 }
 
 .carousel-caption h5 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .carousel-caption p {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
-.carousel-item img {
-  object-fit: cover;
-}
-
-
- */
-
-
-/* Parent container */
-.carousal-inquiry {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Adds space between sections */
-  align-items: stretch; /* Ensures equal height for children */
-  min-height: 100vh; /* Ensures sections fill the viewport height */
-  padding: 20px; /* Adds padding to the parent container */
-}
-
-/* Left carousel section */
-.trip-img {
-  flex: 1; /* Ensures it takes up equal space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.trip-img img {
-  width: 100%; /* Makes the image responsive */
-  height: 100%; /* Ensures the image fills the container */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
-}
-
-/* Right booking form section */
 .inquiry-bookTrip {
-  flex: 1; /* Ensures it takes up equal space */
+  background-color: #f8f9fa;
   padding: 20px;
-  background-color: #f9f9f9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styling */
-.inquiry-bookTrip h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #333;
+form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
 }
 
-.inquiry-bookTrip .form-label {
-  font-size: 1rem;
-  color: #555;
+.form-label {
+  font-weight: bold;
 }
 
-.inquiry-bookTrip .mandatory-indicator {
-  color: red;
-}
-
-.inquiry-bookTrip .form-control {
-  font-size: 0.9rem;
-  padding: 10px;
-}
-
-.inquiry-bookTrip .btn {
-  font-size: 1rem;
-  padding: 10px;
+.form-control {
   width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  outline: none;
 }
 
 /* Responsive Design */
-
-/* For Mobile Screens */
 @media (max-width: 768px) {
-  .carousal-inquiry {
-    flex-direction: column; /* Stacks sections vertically */
-    gap: 10px;
+  .booking-inquiry {
+    flex-direction: column !important;
+    padding: 10px;
   }
 
   .trip-img,
   .inquiry-bookTrip {
-    width: 100%;
-    flex: none; /* Prevents stretching */
-    height: auto; /* Adjusts height dynamically */
+    margin: 5px 0;
   }
 
-  .trip-img img {
-    height: auto; /* Makes image fit within its container */
+  .carousel-caption h5 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
   }
 }
 
-/* For Tablet Screens */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .trip-img,
-  .inquiry-bookTrip {
-    flex: 1;
-    max-width: 50%; /* Ensures equal width */
-  }
-}
-
-/* For Desktop Screens */
-@media (min-width: 1025px) {
-  .carousal-inquiry {
-    flex-direction: row;
+@media (max-width: 480px) {
+  .carousel-caption h5 {
+    font-size: 1rem;
   }
 
-  .trip-img,
-  .inquiry-bookTrip {
-    flex: 1; /* Each takes 50% of the space */
+  .carousel-caption p {
+    font-size: 0.8rem;
   }
 }

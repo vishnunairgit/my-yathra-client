@@ -22,7 +22,7 @@ function LandingNav() {
     const fetchTrips = async () => {
       try {
         const tripData = await GetTrips();
-        setAllTrips(tripData || []); // Ensure allTrips is always an array
+        setAllTrips(tripData || []);
       } catch (error) {
         setErrors(error);
       } finally {

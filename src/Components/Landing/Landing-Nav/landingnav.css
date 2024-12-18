@@ -1,191 +1,131 @@
 .landing-nav {
-    background-color: #000;
-    height: 120px;
-    position: sticky;
-    top: 0;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-    z-index: 1000;
-    justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+  height: 120px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 1000;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .landing-nav .nav-LeftSide,
 .Social-media {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .landing-nav .company-logo {
-    max-width: 10%;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 10px;
+  max-width: 10%;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
 }
 
 .landing-nav .contact-info {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .landing-nav .call-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
 }
 
 .landing-nav .contact-number {
-    font-size: 22px;
-    color: #fcfcfc;
-    margin: 0;
-    font-weight: 300;
+  font-size: 22px;
+  color: #fcfcfc;
+  margin: 0;
+  font-weight: 300;
 }
 
 .landing-nav .Social-media img {
-    padding: 0 10px 0 10px;
-    width: 50px;
+  padding: 0 10px 0 10px;
+  width: 50px;
 }
 
 
 
 
 .landing-nav .dropdown {
-    padding-left: 40px;
+  padding-left: 40px;
 }
 
 .landing-nav .dropdown .btn {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .landing-nav .menu-icon {
-    width: 30px;
-    height: auto;
+  width: 30px;
+  height: auto;
 }
 
 .landing-nav .dropdown-menu li {
-    padding-top: 10px;
-    min-width: 200px;
-    font-weight: 800;
+  padding-top: 10px;
+  min-width: 200px;
+  font-weight: 800;
 }
 
 .landing-nav .dropdown-item {
-    font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .landing-nav .dropdown-item:hover {
-    background-color: #f5f5f5;
-    color: #2980b9;
+  background-color: #f5f5f5;
+  color: #2980b9;
 }
 
 
+/* Existing styles... */
 
-
-/*  */
-
-
-/* General styles for responsiveness */
-.carousal-inquiry {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 20px; /* Add spacing between elements */
-    margin: 20px;
-  }
-  
-  .trip-img,
-  .inquiry-bookTrip {
-    flex: 1 1 50%; /* Allow flexibility with equal proportions */
-    max-width: 50%; /* Set maximum width */
-    box-sizing: border-box;
-  }
-  
-  .carousel-item img {
-    object-fit: cover;
-    height: auto;
-    width: 100%;
-  }
-  
-  .inquiry-bookTrip {
-    display: flex;
+@media (max-width: 768px) {
+  .landing-nav {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .inquiry-bookTrip form {
-    width: 100%; /* Full width for form */
-    max-width: 400px; /* Restrict form width */
-  }
-  
-  form h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .mandatory-indicator {
-    color: red;
-  }
-  
-  form .form-control {
-    font-size: 16px;
+    align-items: flex-start;
     padding: 10px;
   }
-  
-  form button {
+
+  .nav-LeftSide,
+  .Social-media {
+    justify-content: space-between;
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
   }
-  
-  form button:hover {
-    background-color: #0056b3;
+
+  .company-logo {
+    max-width: 20%;
+    margin-right: 10px;
   }
-  
-  /* Media queries for smaller screens */
-  @media (max-width: 768px) {
-    .carousal-inquiry {
-      flex-direction: column; /* Stack items vertically */
-      align-items: center;
-    }
-  
-    .trip-img,
-    .inquiry-bookTrip {
-      flex: 1 1 100%; /* Full width for each section */
-      max-width: 100%; /* Remove max-width restrictions */
-    }
-  
-    form {
-      max-width: 90%; /* Reduce form width for small screens */
-    }
-  
-    .carousel-caption h5 {
-      font-size: 18px; /* Adjust heading size */
-    }
-  
-    .carousel-caption p {
-      font-size: 14px; /* Adjust paragraph size */
-    }
+
+  .contact-info {
+    margin-top: 10px;
   }
-  
-  @media (max-width: 576px) {
-    form h3 {
-      font-size: 20px; /* Adjust heading size for smaller screens */
-    }
-  
-    .carousel-caption h5 {
-      font-size: 16px; /* Further reduce heading size */
-    }
-  
-    .carousel-caption p {
-      font-size: 12px; /* Further reduce paragraph size */
-    }
+
+  .dropdown {
+    align-self: flex-end;
+    margin-top: 10px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .company-logo {
+    max-width: 30%;
+  }
+
+  .contact-number {
+    font-size: 18px;
+  }
+
+  .Social-media img {
+    width: 40px;
+    padding: 0 5px;
+  }
+
+  .menu-icon {
+    width: 25px;
+  }
+}
