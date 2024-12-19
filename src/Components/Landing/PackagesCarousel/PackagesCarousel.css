@@ -3,6 +3,8 @@
 /* Trip Details  */
 
 .trips-details {
+  margin: 20px;
+
     padding: 20px;
     background-color: transparent;
     border-radius: 10px;
@@ -20,6 +22,12 @@
     color: whitesmoke;
     text-align: center;
   }
+
+  /* .carousel-slide {
+    padding: 10px;
+    margin: 10px;
+} */
+
   
   .trip-card {
     display: flex;
@@ -31,6 +39,7 @@
     transition: transform 0.3s;
     border: 1px solid whitesmoke;
     margin-top: 5px;
+    width: 95% !important;
   }
   
   .trip-card:hover {
@@ -156,4 +165,8 @@
     height: 500px;
     border-radius: 9px;
   }
+  
+
+
+
   

@@ -1,6 +1,6 @@
 
 
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import './PackagesCarousel.css';
 import 'slick-carousel/slick/slick.css';
@@ -29,8 +29,12 @@ function PackagesCarousel({ domesticTrips = [], internationalTrips = [] }) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    
+
     responsive: [
       {
         breakpoint: 1024, // Tablet
