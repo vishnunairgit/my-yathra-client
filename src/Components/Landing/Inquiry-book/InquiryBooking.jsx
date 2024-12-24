@@ -51,7 +51,7 @@ function InquiryBooking() {
 
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={img1} className="d-block w-100" alt="Vibrant Nightlife" />
+                <img src={img1} className="d-block " alt="Vibrant Nightlife" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Vibrant Nightlife</h5>
                   <p>
@@ -60,7 +60,7 @@ function InquiryBooking() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={img2} className="d-block w-100" alt="Cultural Wonders" />
+                <img src={img2} className="d-block " alt="Cultural Wonders" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Cultural Wonders</h5>
                   <p>
@@ -69,7 +69,7 @@ function InquiryBooking() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={img3} className="d-block w-100" alt="Serene Beaches" />
+                <img src={img3} className="d-block " alt="Serene Beaches" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Serene Beaches</h5>
                   <p>
