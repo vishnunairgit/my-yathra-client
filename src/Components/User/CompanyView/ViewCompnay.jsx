@@ -9,11 +9,9 @@ import { BASE_URL } from '../../../Constants/BaseUrl';
 
 function ViewCompnay() {
 
-    const companyId = useSelector(state => state.company.companyDetails?.companyId );
+    const companyId = useSelector(state => state.company.companyDetails?.companyId);
 
     // console.log(companyId,"view company");
-    
-
 
     const [mycompany, setmycompany] = useState()
     const [loading, setloading] = useState(true);
@@ -51,10 +49,10 @@ function ViewCompnay() {
     }
 
 
-    const handleEdit = ()=>{
+    const handleEdit = () => {
         navigate(`/EditCompany/${companyId}`);
     }
-    
+
     const handleback = () => {
         navigate('/Home')
     }
@@ -71,7 +69,7 @@ function ViewCompnay() {
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="CompanyName">
-                                    COMPANY NAME 
+                                    COMPANY NAME
                                 </label>
                             </div>
                             <div className="col-75">
@@ -81,7 +79,7 @@ function ViewCompnay() {
                                     name="CompanyName"
                                     placeholder="CompanyName..."
                                     readOnly
-                                      value={mycompany.CompanyName}
+                                    value={mycompany.CompanyName}
                                     required
                                 />
                             </div>
@@ -91,7 +89,7 @@ function ViewCompnay() {
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="Email">
-                                    EMAIL ID 
+                                    EMAIL ID
                                 </label>
                             </div>
                             <div className="col-75">
@@ -99,7 +97,7 @@ function ViewCompnay() {
                                     type="text"
                                     name="Email"
                                     placeholder="Email..."
-                                      value={mycompany.Email}
+                                    value={mycompany.Email}
                                     readOnly
                                     required
                                 />
@@ -110,7 +108,7 @@ function ViewCompnay() {
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="JobTitle">
-                                    PHONE NUMBER 
+                                    PHONE NUMBER
                                 </label>
                             </div>
                             <div className="col-75">
@@ -118,7 +116,7 @@ function ViewCompnay() {
                                     type="text"
                                     name="JobTitle"
                                     placeholder="Phonenumber..."
-                                      value={mycompany.Phonenumber}
+                                    value={mycompany.Phonenumber}
                                     readOnly
                                     required
                                 />
@@ -129,7 +127,7 @@ function ViewCompnay() {
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="JobTitle">
-                                    ADDRESS 
+                                    ADDRESS
                                 </label>
                             </div>
                             <div className="col-75">
@@ -149,7 +147,7 @@ function ViewCompnay() {
                         <div className="row">
                             <div className="col-25">
                                 <label htmlFor="Facebook ID">
-                                    FACEBOOK 
+                                    FACEBOOK
                                 </label>
                             </div>
                             <div className="col-75">
@@ -209,19 +207,19 @@ function ViewCompnay() {
                             <div>
                                 <h4>Logo</h4>
                                 {mycompany.logoFile ? (
-                      <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`}  />
-                    ) : (
-                      <p>No logo available</p>
-                    )}
+                                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`} alt="company logo" />
+                                ) : (
+                                    <p>No logo available</p>
+                                )}
                             </div>
                             <div>
                                 <h4>Image</h4>
                                 {mycompany?.imageFile ? (
-    
-                      <img className="image" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} alt="Image" />
-                    ) : (
-                      <p>No image available</p>
-                    )}
+
+                                    <img className="image" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} alt="company" />
+                                ) : (
+                                    <p>No image available</p>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -236,9 +234,6 @@ function ViewCompnay() {
                         Edit
                     </button>
 
-                    {/* <button className="button_02" type="submit">
-                Submit
-              </button> */}
                 </div>
             </form>
         </div>

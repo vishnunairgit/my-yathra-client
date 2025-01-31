@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
-import { GetSingleTrip, EditTrip, DeleteTrip  } from '../../../Api/Trips';
+import { GetSingleTrip, EditTrip, DeleteTrip } from '../../../Api/Trips';
 
 
 
@@ -16,6 +16,9 @@ function UpdateTrip() {
     const [companyFiles, setCompanyFiles] = useState({
         TripFile: null,
     });
+    
+    console.log(trip);
+    
 
 
     useEffect(() => {
@@ -37,10 +40,6 @@ function UpdateTrip() {
     if (loading) {
         return <Loading />;
     }
-
-    // if (error) {
-    //     return <div>Error: {error.message || 'Something went wrong'}</div>;
-    // }
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -81,7 +80,7 @@ function UpdateTrip() {
     };
 
 
-    const handleBack = ()=>{
+    const handleBack = () => {
         navigate(-1);
     }
 
@@ -106,12 +105,6 @@ function UpdateTrip() {
     if (error) {
         return <div>Error: {error.message}</div>;
     }
-
-
-
-
-
-
 
     return (
 
@@ -309,10 +302,10 @@ function UpdateTrip() {
                     <button className="button_02" type="button" onClick={handleBack}>
                         Back
                     </button>
-                    
-                   <button className="button_03" type="reset" onClick={handleDelete}>
-                     Delete
-                   </button>
+
+                    <button className="button_03" type="reset" onClick={handleDelete}>
+                        Delete
+                    </button>
 
                     <button className="button_01" type="submit">
                         Submit

@@ -73,7 +73,7 @@ function PackagesCarousel({ domesticTrips = [], internationalTrips = [] }) {
 
               <h5>{trip?.TripTitle}</h5>
               {trip?.TripFile ? (
-                <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
+                <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="myyathra logo" />
               ) : (
                 <p>No logo</p>
               )}
@@ -138,7 +138,7 @@ function PackagesCarousel({ domesticTrips = [], internationalTrips = [] }) {
 
               <h5>{trip.TripTitle}</h5>
               {trip?.TripFile ? (
-                <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="trip-image" />
+                <img className="trip-image" src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`} alt="my yathra" />
               ) : (
                 <p>No logo</p>
               )}

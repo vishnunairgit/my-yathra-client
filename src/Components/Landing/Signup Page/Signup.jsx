@@ -42,7 +42,10 @@ function Signup({ setloginsignup }) {
             valid = false;
         }
 
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>/?]{8,}$/;
+
+
+        // const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[A-Za-z\d!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
         if (!passwordRegex.test(signUpForm.password)) {
             formErrors.Password = "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, one number, and one special character";
             valid = false;
@@ -116,7 +119,6 @@ function Signup({ setloginsignup }) {
             setShowPasswordCriteria(false);
         }
     };
-    // -----------------------------------------------------------//
 
     const handlesignup = () => {
         setloginsignup('Login')

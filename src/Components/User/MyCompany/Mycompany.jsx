@@ -2,7 +2,6 @@
 
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../Loading/Loading';
-
 import React, { useEffect, useState } from 'react';
 import Instagram from '../../Assets/my-yathra/icons8-instagram-35.png'
 import FaceBook from '../../Assets/my-yathra/icons8-facebook-35.png'
@@ -69,7 +68,7 @@ function Mycompany() {
 
             <div className='mainImg'>
                 {mycompany?.imageFile ? (
-                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} />
+                    <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.imageFile}`} alt="company logo" />
                 ) : (<p>No image available</p>
                 )}
             </div>
@@ -84,7 +83,7 @@ function Mycompany() {
                     <div className='first'>
                         <div className='companydetails'>
                             {mycompany?.logoFile ? (
-                                <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`} />
+                                <img className="logo" src={`${BASE_URL}/UserFiles/${mycompany?.logoFile}`} alt="company logo" />
                             ) : (<p>No logo available</p>
                             )}
                             <h5><strong>{mycompany?.CompanyName} </strong></h5>

@@ -7,7 +7,7 @@ import pwd from "../../Assets/AssetsProvider";
 import './login.css';
 import { login } from '../../../Api/Landing';
 import { useDispatch } from 'react-redux';
-import { updateCompanyDetails, setCompanyId } from '../../ToolKit/companySlice';
+import { updateCompanyDetails } from '../../ToolKit/companySlice';
 
 function Login({ setloginsignup }) {
   const [loginForm, setLoginForm] = useState({
@@ -117,7 +117,8 @@ function Login({ setloginsignup }) {
               )}
             </div>
           </div>
-          
+          {success && <p className="success-message">{success}</p>}
+
           {errors && <p className="error-message">{errors}</p>}
           <button type="submit" disabled={isLoading} className="button_01">
             {isLoading ? 'Logging in...' : 'Login'}

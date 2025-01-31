@@ -66,7 +66,7 @@ function AllTrip() {
               <img
                 className="trip-image"
                 src={`${BASE_URL}/UserFiles/${trip?.TripFile.split('\\').pop()}`}
-                alt="trip-image"
+                alt="trip"
               />
             ) : (
               <p>No image available</p>

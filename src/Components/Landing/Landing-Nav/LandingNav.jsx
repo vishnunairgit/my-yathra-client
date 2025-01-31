@@ -16,7 +16,6 @@ function LandingNav() {
   const navigate = useNavigate();
   const [allTrips, setAllTrips] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [errors, setErrors] = useState(null);
 
   useEffect(() => {
     const fetchTrips = async () => {
@@ -24,7 +23,8 @@ function LandingNav() {
         const tripData = await GetTrips();
         setAllTrips(tripData || []);
       } catch (error) {
-        setErrors(error);
+        console.error("Error fetching notifications:", error);
+    
       } finally {
         setLoading(false);
       }

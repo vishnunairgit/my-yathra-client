@@ -13,19 +13,17 @@ import location from '../../Assets/my-yathra/icons8-location-35 (2).png'
 import { GetTrips } from '../../../Api/Trips';
 import Loading from '../../Loading/Loading';
 import InquiryBooking from '../Inquiry-book/InquiryBooking';
-import { useNavigate } from 'react-router-dom';
 import PackagesCarousel from '../PackagesCarousel/PackagesCarousel';
 
 
 
 function Landing() {
   
-  const navigate = useNavigate();
   const [allTrips, setAllTrips] = useState([]);
   const [domesticTrips, setDomesticTrips] = useState([]);
   const [internationalTrips, setInternationalTrips] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [errors, setErrors] = useState(null);
+  // const [errors, setErrors] = useState(null);
 
   // Instagram
   const handleInstagram = () => {
@@ -77,8 +75,10 @@ function Landing() {
         setDomesticTrips(domestic);
         setInternationalTrips(international);
 
-      } catch (error) {
-        setErrors(error);
+      }catch (error) {
+        console.error("Error fetching notifications:", error);
+  
+    
       }
       finally {
         setLoading(false);
@@ -101,7 +101,7 @@ function Landing() {
       <div className='Trip-main'>
         {/* company Image and text */}
         <div class="CompanyMainImg-container">
-          <img src={companyimg} alt="Image Description" class="CompanyMainImg-image" />
+          <img src={companyimg} alt="not found" class="CompanyMainImg-image"/>
           <div class="CompanyMainImg-overlay"></div>
           <div class="CompanyMainImg-text-1">Enjoy Your Vacation With Us</div>
           <div class="CompanyMainImg-text-2">I have found out that there ain't no surer way to find out whether you like people or hate them than to travel with them</div>

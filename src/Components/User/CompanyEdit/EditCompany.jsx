@@ -21,6 +21,8 @@ function EditCompany() {
         imageFile: '',
     });
 
+    console.log(company); 
+
 
     useEffect(() => {
         const fetchcompany = async () => {
@@ -281,7 +283,7 @@ function EditCompany() {
                             {CompanyFiles?.imageFile && (
                                 <img
                                     src={URL.createObjectURL(CompanyFiles.imageFile)}
-                                    alt="Image"
+                                    alt="cpmpany"
                                     style={{ width: "100px", height: "100px" }}
                                 />
                             )}

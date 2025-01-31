@@ -14,7 +14,6 @@ function Navbar() {
     const [notifications, setNotifications] = useState([]);
     const [unopenedCount, setUnopenedCount] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchNotifications = async () => {
@@ -45,7 +44,8 @@ function Navbar() {
                     setUnopenedCount(0);
                 }
             } catch (error) {
-                setError(error);
+                console.error("Error fetching notifications:", error);
+            
             } finally {
                 setLoading(false);
             }
@@ -127,14 +127,14 @@ function Navbar() {
                         <img src={user} alt="" />
                     </button>
                     <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a className="dropdown-item" onClick={() => navigate('/ViewCompnay')}>Profile</a></li>
-                        <li><a className="dropdown-item" onClick={() => navigate('/MyCompany')}>My Company</a></li>
-                        <li><a className="dropdown-item" onClick={() => navigate('/Notifications')}>Booking History</a></li>
+                        <li><div className="dropdown-item" onClick={() => navigate('/ViewCompnay')}>Profile</div></li>
+                        <li><div className="dropdown-item" onClick={() => navigate('/MyCompany')}>My Company</div></li>
+                        <li><div className="dropdown-item" onClick={() => navigate('/Notifications')}>Booking History</div></li>
 
-                        <li><a className="dropdown-item" onClick={() => {
+                        <li><div className="dropdown-item" onClick={() => {
                             localStorage.clear();
                             navigate('/');
-                        }}>logout</a></li>
+                        }}>logout</div></li>
                     </ul>
                 </div>
             </div>
